@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arcana Imperii</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <style>
+      body {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= h session[:name] %></h1>
+    <h2>Leader of <%= h session[:country] %></h2>
+    <hr />
+    <div class="row">
+      <div class="col-md-6">
+        Allies:
+        <ul id="allies">
+          
+        </ul>
+      </div>
+      <div class="col-md-6">
+        Enemies:
+        <ul id="enemies">
+          
+        </ul>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-4">
+        Money: <%= h session[:money] %> <%= h session[:currency] %>  
+      </div>
+      <div class="col-md-4">
+        Army members: <%= h session[:army_size] %> citizens
+      </div>
+      <div class="col-md-4">
+        Approval rating: <%= h session[:approval_rating] %>%
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-1">
+        Settings:
+      </div>
+      <div class="col-md-2">
+        <button id="countryname" class="btn btn-primary">Country name</button>
+      </div>
+      <div class="col-md-2">
+        <button id="yourname" class="btn btn-primary">Your name</button>
+      </div>
+      <div class="col-md-2">
+        <button id="currencyname" class="btn btn-primary">Currency name</button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-md-10">
+        
+      </div>
+      <div class="col-md-2">
+        <button id="next" class="btn btn-primary btn-lg">Next day</button>
+      </div>
+    </div>
+  </body>
+</html>
