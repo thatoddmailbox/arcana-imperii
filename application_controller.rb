@@ -12,6 +12,7 @@ class MyApp < Sinatra::Base
   get '/start' do
     session[:name] = "Ruler"
     session[:country] = "Democratic People's Republic of Something"
+    session[:enemy_country] = "Undemocratic People's Republic of Nothing"
     session[:money] = 100000
     session[:currency] = "Monies"
     session[:army_size] = 100
