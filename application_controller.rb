@@ -14,18 +14,26 @@ class MyApp < Sinatra::Base
     session[:name] = "Ruler"
     session[:country] = "the Democratic People's Republic of Something"
     session[:enemy_country] = "the Undemocratic People's Republic of Nothing"
+    session[:ally_country] = "the Moderately Democratic People's Republic of Anything"
     session[:money] = 100000
     session[:currency] = "Monies"
-    session[:army_size] = 100
+    session[:army_size] = 500
     session[:approval_rating] = 100
-    session[:population] = 10000
+    session[:population] = 3000000
     session[:day] = 0
     session[:events] = {}
+    session[:allies] = []
+    session[:enemies] = []
+    session[:pauseDay] = false
+    session[:status] = "playing"
     return redirect to("/game")
   end
   
   get '/game' do
-    if session[:events].length == 0
+    if session[:status] == "lost"
+      return erb :end
+    end
+    if session[:events].length == 0 and not session[:pauseDay]
       session[:day] += 1
       
       day = session[:day]
@@ -34,14 +42,19 @@ class MyApp < Sinatra::Base
         addEventId(1, session)
       elsif day == 2
         addEventId(2, session)
+      elsif day == 3
+        addEventId(3, session)
       end
+    end
+    if session[:pauseDay]
+      session[:pauseDay] = false
     end
     @eventArrayOutput = ""
     if session[:events].length > 0
       session[:events].each do |sessionEventId, eventId|
         event = $events[eventId]
         parsedMsg = event[:message]
-        parsedMsg = parsedMsg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country])
+        parsedMsg = parseMsg(parsedMsg, session)
         @eventArrayOutput += "{sei:#{sessionEventId}, msg:#{jsString(parsedMsg)}, choices:#{jsArray(event[:choices].keys)}}"
       end
     end
@@ -58,7 +71,11 @@ class MyApp < Sinatra::Base
     
     handle_result(result, session)
     
-    $messages[result]
+    session[:events].delete(sessionEventId)
+    
+    session[:pauseDay] = true
+    
+    parseMsg($messages[result], session)
   end
   
   helpers do
