@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require_relative "models/events.rb"
+require_relative "models/event_handler.rb"
 
 class MyApp < Sinatra::Base
   use Rack::Session::Cookie, :key => 'rack.session', :path => '/', :secret => 'thisissecret'
@@ -17,10 +18,39 @@ class MyApp < Sinatra::Base
     session[:currency] = "Monies"
     session[:army_size] = 100
     session[:approval_rating] = 100
+    session[:population] = 10000
+    session[:day] = 0
+    session[:events] = {}
     return redirect to("/game")
   end
+  
   get '/game' do
+    if session[:events].length == 0
+      session[:day] += 1
+      
+      day = session[:day]
+      
+      if day == 1
+        addEventId(1, session)
+      end
+    end
+    @eventArrayOutput = ""
+    if session[:events].length > 0
+      session[:events].each do |sessionEventId, eventId|
+        event = $events[eventId]
+        parsedMsg = event[:message]
+        parsedMsg = parsedMsg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy country)", session[:enemy_country])
+        @eventArrayOutput += "{sei:#{sessionEventId}, msg:#{jsString(parsedMsg)}, choices:#{jsArray(event[:choices].keys)}}"
+      end
+    end
     erb :game
+  end
+  
+  post '/handle_event' do
+    sessionRventId = params[:eventId]
+    eventId = session[:events][sessionEventId]
+    event = $events[eventId]
+    "Something happens here!"
   end
   
   helpers do

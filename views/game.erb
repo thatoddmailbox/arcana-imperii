@@ -13,8 +13,47 @@
         padding: 10px;
       }
     </style>
+    
+    <script>
+      window.events = [<%= @eventArrayOutput %>];
+      
+      function showEventModal(index) {
+        var event = window.events[index];
+        $(".modal-body > p").text(event.msg);
+        for (var choiceIndex in event.choices) {
+          var choice = event.choices[choiceIndex];
+          var $actionButton = $('<button type="button" class="btn btn-primary actionButton"></button>');
+          $actionButton.text(choice);
+          $(".modal-footer").append($actionButton);
+        }
+        $("#eventModal").modal({
+          backdrop: 'static',
+          keyboard: false
+        });
+      }
+      
+      $(document).ready(function() {
+        <% if session[:events].length > 0 %>
+          showEventModal(0);
+        <% end %>
+      });
+    </script>
   </head>
   <body>
+    <div id="eventModal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Event</h4>
+          </div>
+          <div class="modal-body">
+            <p></p>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
     <h1><%= h session[:name] %></h1>
     <h2>Leader of <%= h session[:country] %></h2>
     <hr />
