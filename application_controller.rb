@@ -49,13 +49,16 @@ class MyApp < Sinatra::Base
   end
   
   post '/handle_event' do
-    sessionEventId = params[:eventId]
+    sessionEventId = params[:sei].to_i
     eventId = session[:events][sessionEventId]
-    event = $events[eventId]
+    event = $events[eventId]   
+    choice = params[:choice]
     
+    result = event[:choices][choice]
     
+    handle_result(result, session)
     
-    "Something happens here!"
+    $messages[result]
   end
   
   helpers do
