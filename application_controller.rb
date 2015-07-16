@@ -1,6 +1,8 @@
 require 'bundler'
 Bundler.require
 
+require_relative "models/events.rb"
+
 class MyApp < Sinatra::Base
   use Rack::Session::Cookie, :key => 'rack.session', :path => '/', :secret => 'thisissecret'
   
