@@ -28,7 +28,7 @@ $events = {
     }
   },
     5 => {
-      :message => "Our Most Glorious Leader, should we raise war taxes to support the war effort?"
+      :message => "Our Most Glorious Leader, should we raise war taxes to support the war effort?",
     :choices => {
       "Yes" => :taxes,
       "Yes, but only a little" => :generous_donation,
@@ -50,7 +50,7 @@ $events = {
     }
    },
     8 => {
-      :message => "Our Most Glorious Leader! The armies of (enemy_country) are beggining to cross the border.  ",
+      :message => "Our Most Glorious Leader! The armies of (enemy_country) are beggining to cross the border. We could either dedicate troops perm ",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
