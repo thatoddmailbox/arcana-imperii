@@ -63,16 +63,18 @@ $events = {
       "The state needs the funds" => :generous_donation
     }
    },
-  10 => { #when approval reaches 10
-    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughter en masse. The army is no longer loyal to you and",
+  10 => { #when approval goes below 10%     
+    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughter en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done",
     :choices => {
-      "Capitulate" => :annexation,
-      "Slap him"   => :declaration_of_war
+      "So be it." => :revolution,
+      "As what kind of artist do I die?" => :revolution
+      "What do did I do?" => :revolution    
     }
    }
  }
 
 $messages = {
+  :over_spend => "You do not have the required funds",
   :generous_donation => "Money for your government flows in.", #25,000 dollars
   :influx_of_recruits => "Citizens rush to join the army.", #250 troops
   :annexation => "You have been annexed by (enemy_country)", #you lose
@@ -88,5 +90,6 @@ $messages = {
   :small_bribe => "By libral use of funds, the problem goes away", #lose 10000 dollars
   :public_outrage => "The people are outraged by your disicion! Public support for you wanes.", #lose 30% approval
   :troops_used_for_people => "The people are happy you are protecting their homes" #gain 15% approval lose 500 troops
+  :revolution => "Your rule is over. The people will have your head before long." #game over
   
 }
