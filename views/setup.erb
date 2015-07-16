@@ -12,7 +12,17 @@
     
     <style>
       body {
+        background-image: url(images/background.jpg);
+        background-position: center center;
+        background-size: cover;
         overflow: hidden;
+      }
+      header {
+        background: white;
+        border: solid 3px black;
+        display: inline-block;
+        margin: 0 auto 15px auto;
+        padding: 10px;
       }
       h1, .btn {
         font-family: "Soviet", sans-serif;
@@ -81,9 +91,11 @@
   </head>
   <body>
     <div class="text-center">
-      <h1>Welcome, new leader!</h1>
-      <br />
-      <p>Please take the time to set up your new nation.</p>
+      <header>
+        <h1>Welcome, new leader!</h1>
+        <br />
+        <p>Please take the time to set up your new nation.</p>
+      </header>
       <br />
       <form action="/start" method="POST">
         <div>

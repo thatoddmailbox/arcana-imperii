@@ -57,6 +57,23 @@ def handle_result(result, session)
     session[:army_size] -= 500
   elsif result == :revolution
     session[:status] = "lost"
+  elsif result == :military_propaganda
+    spendResult = spendMoney(1000, session)
+    if spendResult == :ok
+      session[:army_size] += 500
+    else
+      return spendResult
+    end
+  elsif result == :helping_hungry
+    spendResult = spendMoney(40000, session)
+    if spendResult == :ok
+      addApprovalRating(40, session)
+    else
+      return spendResult
+    end        
+  elsif result == :people_starving
+    session[:population] -= 5000
+    addApprovalRating(-10, session)
   end
   
   return :ok
@@ -81,6 +98,10 @@ def addEvents(day, session)
     addEventId(8, session)
   elsif day == 9
     addEventId(9, session)
+  elsif day == 10
+    addEventId(11, session)
+  elsif day == 11
+    addEventId(12, session)
   end
   
   if session[:approval_rating] <= 10
