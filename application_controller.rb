@@ -97,11 +97,16 @@ class MyApp < Sinatra::Base
     
     didItWork = handle_result(result, session)
     
-    session[:events].delete(sessionEventId)
-    
-    session[:pauseDay] = true
+    if didItWork == :ok
+      session[:events].delete(sessionEventId)
+      session[:pauseDay] = true
+    end
     
     message = $messages[result]
+    
+    if didItWork == :over_spend
+      message = $message[:over_spend]
+    end
     
     parseMsg(message, session)
   end

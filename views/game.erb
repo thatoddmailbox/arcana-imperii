@@ -25,8 +25,12 @@
             $("#eventModal .modal-body > p").text("Loading, please wait...");
             $("#eventModal .modal-footer").text("");
             $.post("/handle_event?sei=" + $(this).attr("data-sei") + "&choice=" + encodeURIComponent($(this).attr("data-choice")), function(message) {
-              alert(message);
-              window.location.reload();
+              $("#eventModal .modal-body > p").text(message);
+              var $okBtn = $('<button type="button" class="btn btn-primary">OK</button>');
+              $okBtn.click(function() {
+                window.location.reload();
+              });
+              $("#eventModal .modal-footer").append($okBtn);
             });
           });
           $("#eventModal .modal-footer").append($actionButton);

@@ -49,9 +49,14 @@ def handle_result(result, session)
   elsif result == :nothing
     
   elsif result == :small_bribe
-    session[:money] += 10000   
+    session[:money] += 10000
   elsif result == :public_outrage
     addApprovalRating(-30, session)
+  elsif result == :troops_used_for_people
+    addApprovalRating(15, session)
+    session[:army_size] -= 500
+  elsif result == :revolution
+    session[:status] = "lost"
   end
   
   return :ok
@@ -74,6 +79,12 @@ def addEvents(day, session)
     addEventId(7, session)
   elsif day == 8
     addEventId(8, session)
+  elsif day == 9
+    addEventId(9, session)
+  end
+  
+  if session[:approval_rating] <= 10
+    addEventId(10, session)
   end
 end
 
