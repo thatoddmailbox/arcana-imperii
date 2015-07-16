@@ -86,7 +86,7 @@ $messages = {
   :mercenaries => "We shall hire them at once", #gain 1000 troops. lose 75000 dollars
   :nothing => "As you wish",
   :small_bribe => "By libral use of funds, the problem goes away", #lose 10000 dollars
-  :public_outrage => "The people are outraged by your disicion! Public support for you wanes." #lose 30% approval
+  :public_outrage => "The people are outraged by your disicion! Public support for you wanes.", #lose 30% approval
   :troops_used_for_people => "The people are happy you are protecting their homes" #gain 15% approval lose 500 troops
   
 }
