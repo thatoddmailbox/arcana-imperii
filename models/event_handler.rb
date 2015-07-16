@@ -90,6 +90,19 @@ def handle_result(result, session)
   elsif result == :desperate_measures
     session[:money] += 100000
     addApprovalRating(-40, session)
+  elsif result == :daystobattle5
+    
+  elsif result == :encouraged_recruitment
+    spendResult = spendMoney(5000, session)
+    if spendResult == :ok
+      session[:army_size] += 1000
+    else
+      return spendResult
+    end
+  elsif result == :good_recruitment
+    session[:army_size] += 500
+  elsif result == :ally_supports
+    session[:army_size] += 1000
   end
   
   return :ok
@@ -124,6 +137,12 @@ def addEvents(day, session)
     addEventId(15, session)
   elsif day == 14
     addEventId(16, session)
+  elsif day == 15
+    addEventId(17, session)
+  elsif day == 16
+    if session[:allies].length > 0
+      addEventId(18, session)
+    end
   end
   
   flavor_msgs = [13]
