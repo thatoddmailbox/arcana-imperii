@@ -67,8 +67,15 @@ $events = {
     :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughter en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done",
     :choices => {
       "So be it." => :revolution,
-      "As what kind of artist do I die?" => :revolution
+      "As what kind of artist do I die?" => :revolution,
       "What do did I do?" => :revolution    
+    }
+   },
+   11 => {
+    :message => "Our Most Glorious Leader. A mi",
+    :choices => {
+      "Capitulate" => :annexation,
+      "Slap him"   => :declaration_of_war
     }
    }
  }
@@ -89,7 +96,7 @@ $messages = {
   :nothing => "As you wish",
   :small_bribe => "By libral use of funds, the problem goes away", #lose 10000 dollars
   :public_outrage => "The people are outraged by your disicion! Public support for you wanes.", #lose 30% approval
-  :troops_used_for_people => "The people are happy you are protecting their homes" #gain 15% approval lose 500 troops
+  :troops_used_for_people => "The people are happy you are protecting their homes", #gain 15% approval lose 500 troops
   :revolution => "Your rule is over. The people will have your head before long." #game over
   
 }
