@@ -70,13 +70,7 @@ class MyApp < Sinatra::Base
       
       day = session[:day]
       
-      if day == 1
-        addEventId(1, session)
-      elsif day == 2
-        addEventId(2, session)
-      elsif day == 3
-        addEventId(3, session)
-      end
+      addEvents(day, session)
     end
     if session[:pauseDay]
       session[:pauseDay] = false

@@ -2,6 +2,16 @@ def addEventId(eventId, session)
   session[:events][session[:events].length] = eventId
 end
 
+def addApprovalRating(by, session)
+  session[:approval_rating] += by
+  if session[:approval_rating] < 0
+    session[:approval_rating] = 0
+  end
+  if session[:approval_rating] > 100
+    session[:approval_rating] = 100
+  end
+end
+
 def handle_result(result, session)
   if result == :generous_donation
     session[:money] += 25000
@@ -14,12 +24,46 @@ def handle_result(result, session)
   elsif result == :ally_aid
     session[:money] += 75000
   elsif result == :ally_declares
-    session[:enemies].push(session[:ally_country])
+    session[:allies].push(session[:ally_country])
   elsif result == :mobilize
     session[:army_size] += 2000 
   elsif result == :harsh_draft
     session[:army_size] += 3000
-    session[:approval_rating] -= 20
+    addApprovalRating(-20, session)
+  elsif result == :taxes
+    session[:army_size] += 50000
+    addApprovalRating(-20, session)
+  elsif result == :people_approve
+    addApprovalRating(20, session)
+  elsif result == :mercenaries
+    session[:army_size] += 1000
+    session[:money] -= 75000
+  elsif result == :nothing
+    
+  elsif result == :small_bribe
+    session[:money] += 10000   
+  elsif result == :public_outrage
+    addApprovalRating(-30, session)
+  end
+end
+
+def addEvents(day, session)
+  if day == 1
+    addEventId(1, session)
+  elsif day == 2
+    addEventId(2, session)
+  elsif day == 3
+    addEventId(3, session)
+  elsif day == 4
+    addEventId(4, session)
+  elsif day == 5
+    addEventId(5, session)
+  elsif day == 6
+    addEventId(6, session)
+  elsif day == 7
+    addEventId(7, session)
+  elsif day == 8
+    addEventId(8, session)
   end
 end
 

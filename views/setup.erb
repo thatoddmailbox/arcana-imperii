@@ -24,11 +24,52 @@
         font-size: 1.8em;
       }
       .form-control {
+        display: inline;
         text-align: center;
         margin: 0 auto 15px auto;
-        width: 300px;
+        width: 400px;
+      }
+      form > div {
+        display: block;
+      }
+      .randomize {
+        cursor: pointer;
+        display: inline-block;
+        background-image: url("https://openclipart.org/image/54px/svg_to_png/189685/1387954956.png");
+        width: 32px;
+        height: 32px;
+        margin-left: 10px;
+        position: relative;
+        top: 10px;
       }
     </style>
+    <script>
+      $(document).ready(function() {
+        $(".randomize").click(function() {
+          var choice = $(this).attr("data-what");
+          var $element = $("input[name=" + choice + "]");
+          var newName = "";
+          switch (choice) {
+            case "your_name":
+              newName = "Ruler";
+              break;
+            case "nation_name":
+              newName = "the Democratic People's Republic of Something";
+              break;
+            case "enemy_name":
+              newName = "the Undemocratic People's Republic of Nothing";
+              break;
+            case "ally_name":
+              newName = "the Moderately Democratic People's Republic of Anything";
+              break;
+            case "currency_name":
+              newName = "Monies";
+              break;
+          }
+          $element.val(newName);
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="text-center">
@@ -37,11 +78,22 @@
       <p>Please take the time to set up your new nation.</p>
       <br />
       <form action="/start" method="POST">
-        <input type="text" name="your_name" placeholder="Your name" class="form-control" />
-        <input type="text" name="nation_name" placeholder="Your nation's name" class="form-control" />
-        <input type="text" name="enemy_name" placeholder="Your enemy nation's name" class="form-control" />
-        <input type="text" name="ally_name" placeholder="Your ally nation's name" class="form-control" />
-        <input type="text" name="currency_name" placeholder="Your currency's name" class="form-control" />
+        <div>
+          <input type="text" name="your_name" placeholder="Your name" class="form-control" /> <div class="randomize" data-what="your_name"></div>
+        </div>
+        <div>
+          <input type="text" name="nation_name" placeholder="Your nation's name" class="form-control" /> <div class="randomize" data-what="nation_name"></div>
+        </div>
+        <div>
+          <input type="text" name="enemy_name" placeholder="Your enemy nation's name" class="form-control" /> <div class="randomize" data-what="enemy_name"></div>
+        </div>
+        <div>
+          <input type="text" name="ally_name" placeholder="Your ally nation's name" class="form-control" /> <div class="randomize" data-what="ally_name"></div>
+        </div>
+        <div>
+          <input type="text" name="currency_name" placeholder="Your currency's name" class="form-control" /> <div class="randomize" data-what="currency_name"></div>
+        </div>
+        
         <input type="submit" class="btn btn-primary btn-lg" value="Begin your rule" />
       </form>
     </div>
