@@ -51,18 +51,29 @@
         });
         $("#countryname").click(function() {
           $(".nameSetThing").text("country");
-          $("input[name=whichName]").val("country");
+          $(".nameSetThing").text("country");
           $("#nameSetModal").modal();
         });
         $("#yourname").click(function() {
-          $(".nameSetThing").text("");
-          $("input[name=whichName]").val("ruler");
+          $(".nameSetThing").text("own");
           $("#nameSetModal").modal();
         });
         $("#currencyname").click(function() {
           $(".nameSetThing").text("currency");
-          $("input[name=whichName]").val("currency");
           $("#nameSetModal").modal();
+        });
+        $("#changeName").click(function() {
+          var newName = $("#newName").val();
+          $("#nameSetModal .modal-body").text("Loading, please wait...");
+          $("#nameSetModal .modal-footer").text("");
+          $.post("/newname", { whichName: $(".nameSetThing:first").text(), newName: newName }, function(msg) {
+            $("#nameSetModal .modal-body").text(msg);
+            var $okBtn = $('<button type="button" class="btn btn-primary">OK</button>');
+            $okBtn.click(function() {
+              window.location.reload();
+            });
+            $("#nameSetModal .modal-footer").append($okBtn);
+          });
         });
       });
     </script>
@@ -97,7 +108,7 @@
     </div>
     <div id="nameSetModal" class="modal fade">
       <div class="modal-dialog">
-        <form action="/setname" method="POST" class="modal-content">
+        <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">Set <span class="nameSetThing"></span> name</h4>
@@ -105,14 +116,13 @@
           <div class="modal-body">
             <p>You can change your <span class="nameSetThing"></span> name here, but it will cost you!</p>
             <p>Price: 100 <%= session[:currency] %></p>
-            <input type="hidden" name="whichName" value="" />
-            <input type="text" name="newName" placeholder="New name" class="form-control" />
+            <input type="text" id="newName" placeholder="New name" class="form-control" />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <input type="submit" class="btn btn-primary" value="Change" />
+            <button id="changeName" class="btn btn-primary">Change</button>
           </div>
-        </form><!-- /.modal-content -->
+        </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div>
     <h1><%= h session[:name] %></h1>

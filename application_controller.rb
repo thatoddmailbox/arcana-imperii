@@ -110,6 +110,27 @@ class MyApp < Sinatra::Base
     
     parseMsg(message, session)
   end
+
+  post '/newname' do
+    newName = params[:newName]
+    whichName = params[:whichName]
+    
+    if session[:money] >= 100
+      session[:money] -= 100
+      if whichName == "country"
+        session[:country] = newName
+      elsif whichName == "own"
+        session[:name] = newName
+      elsif whichName == "currency"
+        session[:currency] = newName        
+      end
+      session[:pauseDay] = true
+      return "Your name has been changed."
+    else
+      session[:pauseDay] = true
+      return "You don't have enough money."
+    end
+  end
   
   helpers do
     def h(text)

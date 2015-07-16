@@ -66,22 +66,29 @@
         $(".randomize").click(function() {
           var choice = $(this).attr("data-what");
           var $element = $("input[name=" + choice + "]");
+          
+          var yourName = ["Ruler", "Alexander Khan", "Genghis the Great", "Catherine the Great"];
+          var nationName = ["the Democratic People's Republic of Something", "Arstotzka", "The Global Nation"];
+          var enemyName = ["the Undemocratic People's Republic of Nothing", "Kolechia", "The Empire of Nothing"];
+          var allyName = ["the Moderate People's Republic of Anything", "Obristan", "Dacrerus"];
+          var currencyName = ["Monies", "Kluqning", "Vlaeri"];
+          
           var newName = "";
           switch (choice) {
             case "your_name":
-              newName = "Ruler";
+              newName = yourName[Math.floor(Math.random()*yourName.length)];
               break;
             case "nation_name":
-              newName = "the Democratic People's Republic of Something";
+              newName = nationName[Math.floor(Math.random()*nationName.length)];
               break;
             case "enemy_name":
-              newName = "the Undemocratic People's Republic of Nothing";
+              newName = enemyName[Math.floor(Math.random()*enemyName.length)];
               break;
             case "ally_name":
-              newName = "the Moderate People's Republic of Anything";
+              newName = allyName[Math.floor(Math.random()*allyName.length)];
               break;
             case "currency_name":
-              newName = "Monies";
+              newName = currencyName[Math.floor(Math.random()*currencyName.length)];
               break;
           }
           $element.val(newName);
