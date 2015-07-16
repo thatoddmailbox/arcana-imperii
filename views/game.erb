@@ -5,6 +5,7 @@
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/game.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -48,8 +49,36 @@
         $("#next").click(function() {
           window.location.reload();
         });
+        $("#countryname").click(function() {
+          $(".nameSetThing").text("country");
+          $("input[name=whichName]").val("country");
+          $("#nameSetModal").modal();
+        });
+        $("#yourname").click(function() {
+          $(".nameSetThing").text("");
+          $("input[name=whichName]").val("ruler");
+          $("#nameSetModal").modal();
+        });
+        $("#currencyname").click(function() {
+          $(".nameSetThing").text("currency");
+          $("input[name=whichName]").val("currency");
+          $("#nameSetModal").modal();
+        });
       });
     </script>
+    
+    <style>
+      body {
+        font-family: Montserrat, sans-serif;
+      }
+      h1, h2, .day, #next {
+        font-family: Soviet, sans-serif;
+      }
+      .stats {
+        font-family: Propaganda, sans-serif;
+        font-size: 1.2em;
+      }
+    </style>
   </head>
   <body>
     <div id="eventModal" class="modal fade">
@@ -64,6 +93,26 @@
           <div class="modal-footer">
           </div>
         </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+    <div id="nameSetModal" class="modal fade">
+      <div class="modal-dialog">
+        <form action="/setname" method="POST" class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Set <span class="nameSetThing"></span> name</h4>
+          </div>
+          <div class="modal-body">
+            <p>You can change your <span class="nameSetThing"></span> name here, but it will cost you!</p>
+            <p>Price: 100 <%= session[:currency] %></p>
+            <input type="hidden" name="whichName" value="" />
+            <input type="text" name="newName" placeholder="New name" class="form-control" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" class="btn btn-primary" value="Change" />
+          </div>
+        </form><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div>
     <h1><%= h session[:name] %></h1>
@@ -88,7 +137,7 @@
       </div>
     </div>
     <hr />
-    <div class="row">
+    <div class="row stats">
       <div class="col-md-3">
         Money: <%= p session[:money] %> <%= h session[:currency] %>  
       </div>

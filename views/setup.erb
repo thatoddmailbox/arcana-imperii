@@ -11,8 +11,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
     <style>
+      body {
+        overflow: hidden;
+      }
       h1, .btn {
         font-family: "Soviet", sans-serif;
+      }
+      .form-control, p {
+        font-family: Montserrat, sans-serif;
       }
       h1 {
         font-size: 4em;
@@ -31,6 +37,8 @@
       }
       form > div {
         display: block;
+        position: relative;
+        left: 18px;
       }
       .randomize {
         cursor: pointer;
@@ -60,7 +68,7 @@
               newName = "the Undemocratic People's Republic of Nothing";
               break;
             case "ally_name":
-              newName = "the Moderately Democratic People's Republic of Anything";
+              newName = "the Moderate People's Republic of Anything";
               break;
             case "currency_name":
               newName = "Monies";
