@@ -4,15 +4,10 @@
     <title>Arcana Imperii</title>
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/game.css" rel="stylesheet">
     
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
-    <style>
-      body {
-        padding: 10px;
-      }
-    </style>
     
     <script>
       window.events = [<%= @eventArrayOutput %>];
@@ -46,6 +41,9 @@
         <% if session[:events].length > 0 %>
           showEventModal(0);
         <% end %>
+        $("#next").click(function() {
+          window.location.reload();
+        });
       });
     </script>
   </head>
@@ -71,25 +69,32 @@
       <div class="col-md-6">
         Allies:
         <ul id="allies">
-          
+          <% session[:allies].each do |ally| %>
+          <li><%= h ally %></li>
+          <% end %>          
         </ul>
       </div>
       <div class="col-md-6">
         Enemies:
         <ul id="enemies">
-          
+          <% session[:enemies].each do |enemy| %>
+          <li><%= h enemy %></li>
+          <% end %>
         </ul>
       </div>
     </div>
     <hr />
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         Money: <%= h session[:money] %> <%= h session[:currency] %>  
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
+        Population: <%= h session[:population] %>
+      </div>
+      <div class="col-md-3">
         Army members: <%= h session[:army_size] %> citizens
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         Approval rating: <%= h session[:approval_rating] %>%
       </div>
     </div>
@@ -106,6 +111,9 @@
       </div>
       <div class="col-md-2">
         <button id="currencyname" class="btn btn-primary">Currency name</button>
+      </div>
+      <div class="col-md-2 day">
+        Today is Day <%= session[:day] %>
       </div>
     </div>
     <hr />
