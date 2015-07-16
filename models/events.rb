@@ -68,7 +68,7 @@ $events = {
     :choices => {
       "So be it." => :revolution,
       "As what kind of artist do I die?" => :revolution,
-      "What do did I do?" => :revolution    
+      "What did I do?" => :revolution    
     }
    },
    11 => {
@@ -87,13 +87,35 @@ $events = {
       "Let them eat cake." => :public_outrage
     }
    },
-  13 => {
-    :message => "Our Most Glorious Leader. What strange and confused times we live in! A man has come in ragged clothing claiming he came from a desert! ",
+  13 => {#flavor
+    :message => "Our Most Glorious Leader. What strange and confused times we live in! A man has come in ragged clothing claiming he came from a desert! What should we do with this insane man?",
+    :choices => {
+      "Throw him in the asylum" => :nothing,
+      "Keep him in my court"   => :nothing
+    }
+   },
+  14 => {
+    :message => "Our Most Glorious Leader. A minister has proposed a radical plan. He proposes to reposses the property of political dissidents in order to fund our war. The people will be deeply displeased, but desperate times call for desperate measures. Do you agree?" 
+    :choices => {
+      "Yes" => :desperate_measures,
+      "No"   => :nothing
+    }
+   },
+  15 => {
+    :message => "Our Most Glorious Leader! News from the front! A medium size town is under siege! We could send in the troops to lift the siege, but there may be losses. Alternatively, we could pay money to keep the supplies flowing and we would not need as many soldiers to hold back the invaders. Perhaps it would be best to just let it fall. Keep in mind, the people like decisive victories and do not defeats. What plan should we follow?",
+    :choices => {
+      "Lift the siege!" => :great_victory,
+      "We will hold them back!"   => :city_holds,
+      "We must let it fall" => :city_lost
+    }
+   },
+  16 => {
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are pl",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
     }
-   }
+   },
  }
 
 $messages = {
@@ -116,5 +138,9 @@ $messages = {
   :revolution => "Your rule is over. The people will have your head before long.", #game over
   :military_propaganda => "The campaign is a sucess and we see an increase in recruitment", #gain 500 soldiers
   :helping_hungry => "It is impossible to relieve the famine for everyone, but what you did has made you a hero to the people.", #gain 40% opinion lose 40,000 money
-  :people_starving => "The famine hits hard and the people blame you for it" #lose 5,000 population and 10% oppinion
+  :people_starving => "The famine hits hard and the people blame you for it", #lose 5,000 population and 10% oppinion
+  :great_victory => "Hurray! We have lifted the siege! We have lost soldiers, but the people rejoice and priase your discision.", #lose 1,000 soldiers, gain 20% opinion,
+  :city_holds =>"While it is a great expense, we are maintaining control of the city despite the siege.", #lose 30,000 dollars and 500 troops
+  :city_falls => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss", # Lose 7,500 citizens and 20% opinion
+  :desperate_measures => "Our plan has worked as expected. Our treasury is grows fat on the loot of our conquest. The people grow resentful." #gain 100,000 dollars lose 40% approval
 }
