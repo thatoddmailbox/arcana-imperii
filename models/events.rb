@@ -128,6 +128,13 @@ $events = {
       "Okay" => :ally_supports
     }
    },
+  19 => {
+    :message => "Our Most Glorious Leader! ",
+    :choices => {
+      "Capitulate" => :annexation,
+      "Slap him"   => :declaration_of_war
+    }
+   }
  }
 
 $messages = {
