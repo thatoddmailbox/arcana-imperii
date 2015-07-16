@@ -13,7 +13,31 @@ class MyApp < Sinatra::Base
   get '/setup' do
     erb :setup
   end
+  
   post '/start' do
+    isError = true
+    errors = ""
+    
+    if params.include? :your_name or params[:your_name] == ""
+      errors += "Please enter your name!<br />"
+    end
+    if params.include? :nation_name or params[:nation_name] == ""
+      errors += "Please enter your nation's name!<br />"
+    end
+    if params.include? :enemy_name or params[:enemy_name] == ""
+      errors += "Please enter your enemy's name!<br />"
+    end
+    if params.include? :ally_name or params[:ally_name] == ""
+      errors += "Please enter your ally's name!<br />"
+    end
+    if params.include? :currency_name or params[:currency_name] == ""
+      errors += "Please enter your currency's name!<br />"
+    end
+    
+    if isError
+      return errors
+    end
+    
     session[:name] = params[:your_name]#"Ruler"
     session[:country] = params[:nation_name]#"the Democratic People's Republic of Something"
     session[:enemy_country] = params[:enemy_name]#"the Undemocratic People's Republic of Nothing"
