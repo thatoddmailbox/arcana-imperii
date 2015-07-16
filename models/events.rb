@@ -50,10 +50,10 @@ $events = {
     }
    },
     8 => {
-      :message => "Our Most Glorious Leader! The armies of (enemy_country) are beggining to cross the border. We could dedicate troops to guarding villages and towns as the people want, at the expense of our troops the can be used in combat. Do you think we should?",
+      :message => "Our Most Glorious Leader! The armies of (enemy_country) are begining to cross the border. We could dedicate troops to guarding villages and towns as the people want, at the expense of our troops that can be used in combat. Do you think we should?",
     :choices => {
       "Yes" => :troops_used_for_people,
-      "We cannot afford thew troops" => :nothing
+      "We cannot afford the troops" => :nothing
     }
    },
     9 => {
@@ -63,8 +63,8 @@ $events = {
       "The state needs the funds" => :generous_donation
     }
    },
-    10 => {
-    :message => "Our Most Glorious Leader! A envoy from (enemy_country) has arrived. He demands you recognize (enemy_country)'s sovereignty over (country). How will you respond to this outrage?",
+  10 => { #when approval reaches 10
+    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughter en masse. The army is no longer loyal to you and",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
