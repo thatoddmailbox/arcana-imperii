@@ -75,18 +75,25 @@ $events = {
      :message => "Our Most Glorious Leader. One of your advisors has proposed a propagand campaign in order to recruit more soldiers. He says it would cost 10,000 (currency) and promises results. He awaits your approval.",
     :choices => {
       "Let's do it" => :military_propaganda,
-      "We cannot afford it"   => :people_staring
+      "We cannot afford it"   => :nothing
       
     }
    },
    12 => {
-     :message => "Our Most Glorious Leader, as the war drags on people are displaced, feilds are burned, and supply routes are cut. These factors have caused acute shortages of food and people are starving in the streets. They beg for help and resentment towards our government is rising. The cost of aliviating the situation is estimated to be 40,000, but the people would see you as a hero. What should we do?",
+     :message => "Our Most Glorious Leader, as the war drags on people are displaced, feilds are burned, and supply routes are cut. These factors have caused acute shortages of food and people are starving in the streets. They beg for help and resentment towards our government is rising. The cost of aliviating the situation is estimated to be 40,000 (currency), but the people would see you as a hero. What should we do?",
     :choices => {
       "We must act!" => :helping_hungry,
-      "We cannot help"   => :declaration_of_war,
-      "Let them eat cake" => :public_outrage
+      "We cannot help."   => :people_starving,
+      "Let them eat cake." => :public_outrage
     }
    },
+  13 => {
+    :message => "Our Most Glorious Leader. What strange and confused times we live in! A man",
+    :choices => {
+      "Capitulate" => :annexation,
+      "Slap him"   => :declaration_of_war
+    }
+   }
  }
 
 $messages = {
@@ -107,5 +114,7 @@ $messages = {
   :public_outrage => "The people are outraged by your disicion! Public support for you wanes.", #lose 30% approval
   :troops_used_for_people => "The people are happy you are protecting their homes", #gain 15% approval lose 500 troops
   :revolution => "Your rule is over. The people will have your head before long.", #game over
-  :military_prpaganda => "The campaign is a sucess and we see an increase in recruitment" #gain 500 soldiers
+  :military_propaganda => "The campaign is a sucess and we see an increase in recruitment" #gain 500 soldiers
+  :helping_hungry => "It is impossible to relieve the famine for everyone, but what you did has made you a hero to the people." #gain 40% opinion lose 40,000 money
+  :people_starving => "The famine hits hard and the people blame you for it" #lose 5,000 population and 10% oppinion
 }
