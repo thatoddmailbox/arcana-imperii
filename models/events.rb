@@ -110,10 +110,9 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counter attack. This is our chance to dicively win the war!",
     :choices => {
-      "Capitulate" => :annexation,
-      "Slap him"   => :declaration_of_war
+      "We will be victorious" => :daystobattle5
     }
    },
  }
@@ -142,5 +141,6 @@ $messages = {
   :great_victory => "Hurray! We have lifted the siege! We have lost soldiers, but the people rejoice and priase your discision.", #lose 1,000 soldiers, gain 20% opinion,
   :city_holds =>"While it is a great expense, we are maintaining control of the city despite the siege.", #lose 30,000 dollars and 500 troops
   :city_falls => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss", # Lose 7,500 citizens and 20% opinion
-  :desperate_measures => "Our plan has worked as expected. Our treasury is grows fat on the loot of our conquest. The people grow resentful." #gain 100,000 dollars lose 40% approval
+  :desperate_measures => "Our plan has worked as expected. Our treasury is grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
+  :daystobattle5 => "Preparations must begin now if we want to see victory."
 }
