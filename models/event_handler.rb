@@ -12,6 +12,14 @@ def addApprovalRating(by, session)
   end
 end
 
+def spendMoney(amount, session)
+  if session[:money] >= amount
+    session[:money] -= amount
+    return :ok
+  end
+  return :over_spend
+end
+
 def handle_result(result, session)
   if result == :generous_donation
     session[:money] += 25000
@@ -31,13 +39,13 @@ def handle_result(result, session)
     session[:army_size] += 3000
     addApprovalRating(-20, session)
   elsif result == :taxes
-    session[:army_size] += 50000
+    session[:money] += 50000
     addApprovalRating(-20, session)
   elsif result == :people_approve
     addApprovalRating(20, session)
   elsif result == :mercenaries
     session[:army_size] += 1000
-    session[:money] -= 75000
+    return spendMoney(75000, session)
   elsif result == :nothing
     
   elsif result == :small_bribe
@@ -45,6 +53,8 @@ def handle_result(result, session)
   elsif result == :public_outrage
     addApprovalRating(-30, session)
   end
+  
+  return :ok
 end
 
 def addEvents(day, session)

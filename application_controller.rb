@@ -95,13 +95,15 @@ class MyApp < Sinatra::Base
     
     result = event[:choices][choice]
     
-    handle_result(result, session)
+    didItWork = handle_result(result, session)
     
     session[:events].delete(sessionEventId)
     
     session[:pauseDay] = true
     
-    parseMsg($messages[result], session)
+    message = $messages[result]
+    
+    parseMsg(message, session)
   end
   
   helpers do
