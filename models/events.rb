@@ -88,7 +88,7 @@ $events = {
     }
    },
   13 => {
-    :message => "Our Most Glorious Leader. What strange and confused times we live in! A man",
+    :message => "Our Most Glorious Leader. What strange and confused times we live in! A man has come in ragged clothing claiming he came from a desert! ",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
@@ -114,7 +114,7 @@ $messages = {
   :public_outrage => "The people are outraged by your disicion! Public support for you wanes.", #lose 30% approval
   :troops_used_for_people => "The people are happy you are protecting their homes", #gain 15% approval lose 500 troops
   :revolution => "Your rule is over. The people will have your head before long.", #game over
-  :military_propaganda => "The campaign is a sucess and we see an increase in recruitment" #gain 500 soldiers
-  :helping_hungry => "It is impossible to relieve the famine for everyone, but what you did has made you a hero to the people." #gain 40% opinion lose 40,000 money
+  :military_propaganda => "The campaign is a sucess and we see an increase in recruitment", #gain 500 soldiers
+  :helping_hungry => "It is impossible to relieve the famine for everyone, but what you did has made you a hero to the people.", #gain 40% opinion lose 40,000 money
   :people_starving => "The famine hits hard and the people blame you for it" #lose 5,000 population and 10% oppinion
 }
