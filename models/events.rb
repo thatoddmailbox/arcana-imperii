@@ -36,6 +36,6 @@ $messages = {
   :declaration_of_war => "(enemy_country) has declared war on (country)! Our armies will destroy them on the field of battle.",
   :ally_aid => "Our longtime ally sends us money and military supplies", #gives 75,000 dollars
   :ally_declares => "Our longtime ally has joined us in war against (enemy_country)", #allies comes into war
-  :mobilize => "Our army is ready for combat" #2000 troops
+  :mobilize => "Our army is ready for combat", #2000 troops
   :harsh_draft => "Our army size has increased, but the people are displeased" #300 troops, lose 10% approval
 }
