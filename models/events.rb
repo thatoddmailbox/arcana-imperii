@@ -50,7 +50,21 @@ $events = {
     }
    },
     8 => {
-      :message => "Our Most Glorious Leader! The armies of (enemy_country) are beggining to cross the border. We could either dedicate troops perm ",
+      :message => "Our Most Glorious Leader! The armies of (enemy_country) are beggining to cross the border. We could dedicate troops to guarding villages and towns as the people want, at the expense of our troops the can be used in combat. Do you think we should?",
+    :choices => {
+      "Yes" => :troops_used_for_people,
+      "We cannot afford thew troops" => :nothing
+    }
+   },
+    9 => {
+      :message => "Our Most Glorious Leader, an interesting situation has arisen. A wealthy government offical has died and he has left his money to charity. This would no doubt improve the people's view of our government, but we could also pocket the money for the needs of the state. What do you think is right?", 
+    :choices => {
+      "Do as he wished" => :people_approve,
+      "The state needs the funds" => :generous_donation
+    }
+   },
+    10 => {
+    :message => "Our Most Glorious Leader! A envoy from (enemy_country) has arrived. He demands you recognize (enemy_country)'s sovereignty over (country). How will you respond to this outrage?",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
@@ -59,7 +73,7 @@ $events = {
  }
 
 $messages = {
-  :generous_donation => "Moneyfor your government flows in.", #25,000 dollars
+  :generous_donation => "Money for your government flows in.", #25,000 dollars
   :influx_of_recruits => "Citizens rush to join the army.", #250 troops
   :annexation => "You have been annexed by (enemy_country)", #you lose
   :declaration_of_war => "(enemy_country) has declared war on (country)! Our armies will destroy them on the field of battle.",
@@ -73,4 +87,6 @@ $messages = {
   :nothing => "As you wish",
   :small_bribe => "By libral use of funds, the problem goes away", #lose 10000 dollars
   :public_outrage => "The people are outraged by your disicion! Public support for you wanes." #lose 30% approval
+  :troops_used_for_people => "The people are happy you are protecting their homes" #gain 15% approval lose 500 troops
+  
 }
