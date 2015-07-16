@@ -24,7 +24,7 @@ def handle_result(result, session)
 end
 
 def parseMsg(msg, session)
-  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country]).gsub("(money)", session[:money]).gsub("(currency)", session[:currency])
+  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country]).gsub("(money)", session[:money].to_s).gsub("(currency)", session[:currency])
 end
 
 def jsString(str)

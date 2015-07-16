@@ -86,16 +86,16 @@
     <hr />
     <div class="row">
       <div class="col-md-3">
-        Money: <%= h session[:money] %> <%= h session[:currency] %>  
+        Money: <%= p session[:money] %> <%= h session[:currency] %>  
       </div>
       <div class="col-md-3">
-        Population: <%= h session[:population] %>
+        Population: <%= p session[:population] %>
       </div>
       <div class="col-md-3">
-        Army members: <%= h session[:army_size] %> citizens
+        Army members: <%= p session[:army_size] %> citizens
       </div>
       <div class="col-md-3">
-        Approval rating: <%= h session[:approval_rating] %>%
+        Approval rating: <%= p session[:approval_rating] %>%
       </div>
     </div>
     <hr />

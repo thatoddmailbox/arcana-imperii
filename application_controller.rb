@@ -15,23 +15,28 @@ class MyApp < Sinatra::Base
   end
   
   post '/start' do
-    isError = true
+    isError = false
     errors = ""
     
     if params.include? :your_name or params[:your_name] == ""
       errors += "Please enter your name!<br />"
+      isError = true
     end
     if params.include? :nation_name or params[:nation_name] == ""
       errors += "Please enter your nation's name!<br />"
+      isError = true
     end
     if params.include? :enemy_name or params[:enemy_name] == ""
       errors += "Please enter your enemy's name!<br />"
+      isError = true
     end
     if params.include? :ally_name or params[:ally_name] == ""
       errors += "Please enter your ally's name!<br />"
+      isError = true
     end
     if params.include? :currency_name or params[:currency_name] == ""
       errors += "Please enter your currency's name!<br />"
+      isError = true
     end
     
     if isError
@@ -108,6 +113,23 @@ class MyApp < Sinatra::Base
   helpers do
     def h(text)
       Rack::Utils.escape_html(text)
+    end
+    def p(num)
+      numStr = num.to_s
+      if num < 1000
+        return numStr
+      end
+      newNumStr = ""
+      time = 1
+      (numStr.length - 1).downto(0) do |i|
+        newNumStr = numStr[i] + newNumStr
+        time += 1
+        if time == 4 and i != 0
+          newNumStr = "," + newNumStr
+          time = 1
+        end
+      end
+      return newNumStr
     end
   end
 
