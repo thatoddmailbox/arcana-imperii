@@ -24,7 +24,8 @@ $events = {
 
 $messages = {
   :generous_donation => "Donations for your government flow in.",
-  :influx_of_recruits => "Citizens rush to join the army."
-  :annexation => "You have been annexed by (enemy_country)"
-  :declaration_of_war => "(enemy_country) has declared war on (country)! Our armies will destroy them on the field of battle."
+  :influx_of_recruits => "Citizens rush to join the army.",
+  :annexation => "You have been annexed by (enemy_country)",
+  :declaration_of_war => "(enemy_country) has declared war on (country)! Our armies will destroy them on the field of battle.",
+  :ally_aid => "Our longtime ally sends us money and military supplies" #gives 75,000 dollars and
 }
