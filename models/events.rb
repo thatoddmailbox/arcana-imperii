@@ -64,7 +64,7 @@ $events = {
     }
    },
   10 => { #when approval goes below 10%     
-    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughter en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done",
+    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughtered en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done",
     :choices => {
       "So be it." => :revolution,
       "As what kind of artist do I die?" => :revolution,
@@ -110,9 +110,22 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counter attack. This is our chance to dicively win the war!",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counter attack. We estamate the attacking force to be 7000 strong, give or take a couple hundred. This is our chance to dicively win the war!",
     :choices => {
       "We will be victorious" => :daystobattle5
+    }
+   },
+  17 => {
+    :message => "Our Most Glorious Leader! A call has gone out for extra soldiers in preparation for this major confrontation. Should we add monetary compensation to encourage citizens to sign-up?",
+    :choices => {
+      "Yes" => :encouraged_recruitment,
+      "No, we cannot afford it"   => :good_recruitment
+    }
+   },
+  18 => {#only triggered if ally join in the war
+    :message => "Our Most Glorious Leader! Our steadfast ally, (ally_country), has sent us a message. They will contribute 1000 troops to the upcoming battle. Victory draws closer!",
+    :choices => {
+      "Okay" => :ally_supports
     }
    },
  }
@@ -127,7 +140,7 @@ $messages = {
   :ally_declares => "Our longtime ally has joined us in war against (enemy_country)", #allies comes into war
   :mobilize => "Our army is ready for combat", #2000 troops
   :harsh_draft => "Our army size has increased, but the people are displeased", #3000 troops, lose 20% approval
-  :taxes => "We have more funds to work with, but the people are displeases", #50,000 dollars, lose 20% approval
+  :taxes => "We have more funds to work with, but the people are displeased", #50,000 dollars, lose 20% approval
   :people_approve => "The people approve of your discision", #gain 20 % approval
   :mercenaries => "We shall hire them at once", #gain 1000 troops. lose 75000 dollars
   :nothing => "As you wish",
@@ -143,4 +156,7 @@ $messages = {
   :city_falls => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss", # Lose 7,500 citizens and 20% opinion
   :desperate_measures => "Our plan has worked as expected. Our treasury is grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
   :daystobattle5 => "Preparations must begin now if we want to see victory."
+  :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!" #lose 5000 dollars and gain 1000 recruits
+  :good_recruitment => "We were sucessful at recruiting troops" #gain 500 troops
+  :ally_supports => "Our army is bolstered with their strength" #gain 100 troops
 }
