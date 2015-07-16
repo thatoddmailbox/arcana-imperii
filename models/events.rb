@@ -95,7 +95,7 @@ $events = {
     }
    },
   14 => {
-    :message => "Our Most Glorious Leader. A minister has proposed a radical plan. He proposes to reposses the property of political dissidents in order to fund our war. The people will be deeply displeased, but desperate times call for desperate measures. Do you agree?" 
+    :message => "Our Most Glorious Leader. A minister has proposed a radical plan. He proposes to reposses the property of political dissidents in order to fund our war. The people will be deeply displeased, but desperate times call for desperate measures. Do you agree?", 
     :choices => {
       "Yes" => :desperate_measures,
       "No"   => :nothing
@@ -110,7 +110,7 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are pl",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning",
     :choices => {
       "Capitulate" => :annexation,
       "Slap him"   => :declaration_of_war
