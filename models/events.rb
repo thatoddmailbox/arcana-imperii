@@ -155,8 +155,8 @@ $messages = {
   :city_holds =>"While it is a great expense, we are maintaining control of the city despite the siege.", #lose 30,000 dollars and 500 troops
   :city_falls => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss", # Lose 7,500 citizens and 20% opinion
   :desperate_measures => "Our plan has worked as expected. Our treasury is grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
-  :daystobattle5 => "Preparations must begin now if we want to see victory."
-  :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!" #lose 5000 dollars and gain 1000 recruits
-  :good_recruitment => "We were sucessful at recruiting troops" #gain 500 troops
-  :ally_supports => "Our army is bolstered with their strength" #gain 100 troops
+  :daystobattle5 => "Preparations must begin now if we want to see victory.".
+  :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!", #lose 5000 dollars and gain 1000 recruits
+  :good_recruitment => "We were sucessful at recruiting troops", #gain 500 troops
+  :ally_supports => "Our army is bolstered with their strength" #gain 1000 troops
 }
