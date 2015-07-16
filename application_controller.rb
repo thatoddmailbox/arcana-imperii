@@ -10,13 +10,16 @@ class MyApp < Sinatra::Base
   get '/' do
     erb :index
   end
-  get '/start' do
-    session[:name] = "Ruler"
-    session[:country] = "the Democratic People's Republic of Something"
-    session[:enemy_country] = "the Undemocratic People's Republic of Nothing"
-    session[:ally_country] = "the Moderately Democratic People's Republic of Anything"
+  get '/setup' do
+    erb :setup
+  end
+  post '/start' do
+    session[:name] = params[:your_name]#"Ruler"
+    session[:country] = params[:nation_name]#"the Democratic People's Republic of Something"
+    session[:enemy_country] = params[:enemy_name]#"the Undemocratic People's Republic of Nothing"
+    session[:ally_country] = params[:ally_name]#"the Moderately Democratic People's Republic of Anything"
+    session[:currency] = params[:currency_name]#"Monies"
     session[:money] = 100000
-    session[:currency] = "Monies"
     session[:army_size] = 500
     session[:approval_rating] = 100
     session[:population] = 3000000

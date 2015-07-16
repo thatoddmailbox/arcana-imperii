@@ -11,11 +11,20 @@ def handle_result(result, session)
     session[:status] = "lost"
   elsif result == :declaration_of_war
     session[:enemies].push(session[:enemy_country])
+  elsif result == :ally_aid
+    session[:money] += 75000
+  elsif result == :ally_declares
+    session[:enemies].push(session[:ally_country])
+  elsif result == :mobilize
+    session[:army_size] += 2000 
+  elsif result == :harsh_draft
+    session[:army_size] += 3000
+    session[:approval_rating] -= 20
   end
 end
 
 def parseMsg(msg, session)
-  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country])
+  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country]).gsub("(money)", session[:money]).gsub("(currency)", session[:currency])
 end
 
 def jsString(str)

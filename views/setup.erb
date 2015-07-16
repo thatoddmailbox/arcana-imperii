@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arcana Imperii</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/game.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <style>
+      .form-control {
+        text-align: center;
+        margin: 0 auto 15px auto;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-center">
+      <h1>Welcome, new leader!</h1>
+      <br />
+      <p>Please take the time to set up your new nation.</p>
+      <br />
+      <form action="/start" method="POST">
+        <input type="text" name="your_name" placeholder="Your name" class="form-control" />
+        <input type="text" name="nation_name" placeholder="Your nation's name" class="form-control" />
+        <input type="text" name="enemy_name" placeholder="Your enemy nation's name" class="form-control" />
+        <input type="text" name="ally_name" placeholder="Your ally nation's name" class="form-control" />
+        <input type="text" name="currency_name" placeholder="Your currency's name" class="form-control" />
+        <input type="submit" class="btn btn-primary btn-lg" value="Begin your rule" />
+      </form>
+    </div>
+  </body>
+</html>
