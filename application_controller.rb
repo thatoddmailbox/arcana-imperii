@@ -12,8 +12,8 @@ class MyApp < Sinatra::Base
   end
   get '/start' do
     session[:name] = "Ruler"
-    session[:country] = "Democratic People's Republic of Something"
-    session[:enemy_country] = "Undemocratic People's Republic of Nothing"
+    session[:country] = "the Democratic People's Republic of Something"
+    session[:enemy_country] = "the Undemocratic People's Republic of Nothing"
     session[:money] = 100000
     session[:currency] = "Monies"
     session[:army_size] = 100
@@ -32,6 +32,8 @@ class MyApp < Sinatra::Base
       
       if day == 1
         addEventId(1, session)
+      elsif day == 2
+        addEventId(2, session)
       end
     end
     @eventArrayOutput = ""
@@ -39,7 +41,7 @@ class MyApp < Sinatra::Base
       session[:events].each do |sessionEventId, eventId|
         event = $events[eventId]
         parsedMsg = event[:message]
-        parsedMsg = parsedMsg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy country)", session[:enemy_country])
+        parsedMsg = parsedMsg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country])
         @eventArrayOutput += "{sei:#{sessionEventId}, msg:#{jsString(parsedMsg)}, choices:#{jsArray(event[:choices].keys)}}"
       end
     end
@@ -47,9 +49,12 @@ class MyApp < Sinatra::Base
   end
   
   post '/handle_event' do
-    sessionRventId = params[:eventId]
+    sessionEventId = params[:eventId]
     eventId = session[:events][sessionEventId]
     event = $events[eventId]
+    
+    
+    
     "Something happens here!"
   end
   

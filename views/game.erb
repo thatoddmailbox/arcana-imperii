@@ -19,12 +19,16 @@
       
       function showEventModal(index) {
         var event = window.events[index];
-        $(".modal-body > p").text(event.msg);
+        $("#eventModal .modal-body > p").text(event.msg);
         for (var choiceIndex in event.choices) {
           var choice = event.choices[choiceIndex];
           var $actionButton = $('<button type="button" class="btn btn-primary actionButton"></button>');
           $actionButton.text(choice);
-          $(".modal-footer").append($actionButton);
+          $actionButton.click(function() {
+            $("#eventModal .modal-body > p").text("Loading, please wait...");
+            $("#eventModal .modal-footer").text("");
+          });
+          $("#eventModal .modal-footer").append($actionButton);
         }
         $("#eventModal").modal({
           backdrop: 'static',
