@@ -3,6 +3,7 @@ Bundler.require
 
 require_relative "models/events.rb"
 require_relative "models/event_handler.rb"
+require_relative "models/newspaper.rb"
 
 class MyApp < Sinatra::Base
   use Rack::Session::Cookie, :key => 'rack.session', :path => '/', :secret => 'thisissecret'
@@ -10,8 +11,13 @@ class MyApp < Sinatra::Base
   get '/' do
     erb :index
   end
+  
   get '/setup' do
     erb :setup
+  end
+  
+  get '/newspaper' do
+    generateHeadlines(session).inspect
   end
   
   post '/start' do

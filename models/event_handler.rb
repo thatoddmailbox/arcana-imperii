@@ -134,7 +134,7 @@ def addEvents(day, session)
 end
 
 def parseMsg(msg, session)
-  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country]).gsub("(money)", session[:money].to_s).gsub("(currency)", session[:currency])
+  msg.gsub("(name)", session[:name]).gsub("(country)", session[:country]).gsub("(enemy_country)", session[:enemy_country]).gsub("(ally_country)", session[:ally_country]).gsub("(money)", session[:money].to_s).gsub("(currency)", session[:currency]).gsub("(any_country)", [session[:country],session[:ally_country],session[:enemy_country]].sample).gsub("(friendly)", [session[:country],session[:ally_country]].sample)
 end
 
 def jsString(str)
