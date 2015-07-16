@@ -2,6 +2,10 @@ def addEventId(eventId, session)
   session[:events][session[:events].length] = eventId
 end
 
+def handle_result(result, session)
+  
+end
+
 def jsString(str)
   return "\"" + str.gsub("\"", "\\\"") + "\""
 end
