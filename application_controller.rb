@@ -77,10 +77,16 @@ class MyApp < Sinatra::Base
     end
     @eventArrayOutput = ""
     if session[:events].length > 0
+      first_time = true
       session[:events].each do |sessionEventId, eventId|
         event = $events[eventId]
         parsedMsg = event[:message]
         parsedMsg = parseMsg(parsedMsg, session)
+        if not first_time
+          @eventArrayOutput += ", "
+        else
+          first_time = false
+        end
         @eventArrayOutput += "{sei:#{sessionEventId}, msg:#{jsString(parsedMsg)}, choices:#{jsArray(event[:choices].keys)}}"
       end
     end

@@ -70,10 +70,26 @@ def handle_result(result, session)
       addApprovalRating(40, session)
     else
       return spendResult
-    end        
+    end
   elsif result == :people_starving
     session[:population] -= 5000
     addApprovalRating(-10, session)
+  elsif result == :great_victory
+    session[:army_size] -= 1000
+    addApprovalRating(20, session)
+  elsif result == :city_holds
+    spendResult = spendMoney(30000, session)
+    if spendResult == :ok
+      session[:army_size] -= 500
+    else
+      return spendResult
+    end
+  elsif result == :city_falls
+    session[:population] -= 7500
+    addApprovalRating(-20, session)
+  elsif result == :desperate_measures
+    session[:money] += 100000
+    addApprovalRating(-40, session)
   end
   
   return :ok
@@ -102,7 +118,15 @@ def addEvents(day, session)
     addEventId(11, session)
   elsif day == 11
     addEventId(12, session)
+  elsif day == 12
+    addEventId(14, session)
+  elsif day == 13
+    addEventId(15, session)
+  elsif day == 14
+    addEventId(16, session)
   end
+  
+  flavor_msgs = [13]
   
   if session[:approval_rating] <= 10
     addEventId(10, session)
