@@ -109,7 +109,7 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 6 days from now. With this intelligence we can prepare a counterattack. We estamate the attacking force to be 7,000 strong, give or take a couple hundred. This is our chance to decisively win the war!",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 6 days from now. With this intelligence we can prepare a counterattack. We estimate the attacking force to be 7,000 strong, give or take a couple hundred. This is our chance to decisively win the war!",
     :choices => {
       "We will be victorious" => :daystobattle5
     }
@@ -128,28 +128,28 @@ $events = {
     }
    },
   19 => {#run if ally is not in the war
-    :message => "Our Most Glorious Leader! Our ally (ally_country) is not techincally at war with (enemy_country), and as such it would be a diplomatic catsrophe if their troops participated in combat. However, they are offering to supply us with a thousand mercanaries for 80,000 (currency). Do you think we should accept that deal?",
+    :message => "Our Most Glorious Leader! Our ally (ally_country) is not techincally at war with (enemy_country), and as such it would be a diplomatic catastrophe if their troops participated in combat. However, they are offering to supply us with 1,000 mercanaries for 80,000 (currency). Do you think we should accept that deal?",
     :choices => {
       "Yes" => :ally_mercenaries,
       "No"   => :nothing
     }
    },
   20 => {
-    :message => "Our Most Glorious Leader! Due to the immediate necessity of recruiting troops, an advisor has suggested we make some...exceptions to our recitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
+    :message => "Our Most Glorious Leader! Due to the immediate necessity of recruiting troops, an advisor has suggested we make some...exceptions to our recruitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
     :choices => {
       "Yes" => :conscription_en_masse,
       "No, we must draw the line"   => :nothing
     }
    },
    21 => {
-     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficient at basic combat. While these are supposed to be only for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
+     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citizens near the fighting have formed local militias which have become quite proficient at basic combat. While these are supposed to be only for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
     :choices => {
       "Yes" => :citizen_militias,
       "No, of course not"   => :nothing
     }
    },
    22 => {
-     :message => "Our Most Glorious Leader! Throughout the war we have given some aid to those displaced and dispossessed by the war. However, in an effort to encourage citizens to join the army we could tie those benefits to army service. This could be considered 'extremely amoral' by the citizenry, as everything seems to be in this day and age. Let's not let that get in the way of neccesity, right?",
+     :message => "Our Most Glorious Leader! Throughout the war we have given some aid to those displaced and dispossessed by the war. However, in an effort to encourage citizens to join the army, we could tie those benefits to army service. This would be considered 'extremely amoral' by the citizenry, as everything seems to be in this day and age. Let's not let that get in the way of necessity, right?",
     :choices => {
       "Right" => :conscription_for_benefits,
       "Wrong"   => :nothing
@@ -158,13 +158,13 @@ $events = {
   23 => {
     :message => "Our Most Glorious Leader! The day has come! The legions of (enemy_country) are making their charge! This battle will decide the fate of the war. Our armies are in position. This day will go down in history, one way or the other. I hope our actions have sucured victory.",
     :choices => {
-      "we will hold" => :final_battle,
+      "We will hold" => :final_battle,
       "We'll spill the blood of our enemies this day" => :final_battle,
       "One day there will be peace" => :final_battle
     }
    },
   24 => {#If you have more than 7000 soldiers after event 23
-     :message => "Our Most Glorious Leader! News from the front! Victory! Victory! The people rejoice in the streets! The war is won. Their surender will come shortly. One way or another, you did it. You are ahero to the people. There will be peace. Long live (ruler)! Long live (country)!",
+     :message => "Our Most Glorious Leader! News from the front! Victory! Victory! The people rejoice in the streets! The war is won. Their surrender will come shortly. One way or another, you did it. You are a hero to the people. There will be peace. Long live (ruler)! Long live (country)!",
     :choices => {
       "Esto Perpetua" => :victory
     }
