@@ -52,7 +52,12 @@ def handle_result(result, session)
   elsif result == :nothing
     
   elsif result == :small_bribe
-    session[:money] += 10000
+    spendResult = spendMoney(10000, session)
+    if spendResult == :ok
+      
+    else
+      return spendResult
+    end
   elsif result == :public_outrage
     addApprovalRating(-30, session)
     if session[:day] == 7
@@ -131,7 +136,9 @@ def handle_result(result, session)
       session[:army_size] += 1000
     else
       return spendResult
-    end  
+    end
+  elsif result == :victory
+    session[:status] = "win"    
   end
   
   return :ok

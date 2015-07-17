@@ -76,6 +76,9 @@ class MyApp < Sinatra::Base
     if session[:status] == "lost"
       return erb :end
     end
+    if session[:status] == "win"
+      return erb :win
+    end
     if session[:events].length == 0 and not session[:pauseDay]
       session[:day] += 1
       
