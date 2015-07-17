@@ -109,7 +109,7 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counter attack. We estamate the attacking force to be 7000 strong, give or take a couple hundred. This is our chance to dicively win the war!",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counterattack. We estamate the attacking force to be 7,000 strong, give or take a couple hundred. This is our chance to decisively win the war!",
     :choices => {
       "We will be victorious" => :daystobattle5
     }
@@ -122,7 +122,7 @@ $events = {
     }
    },
   18 => {#only triggered if ally join in the war
-    :message => "Our Most Glorious Leader! Our steadfast ally, (ally_country), has sent us a message. They will contribute 1000 troops to the upcoming battle. Victory draws closer!",
+    :message => "Our Most Glorious Leader! Our steadfast ally, (ally_country), has sent us a message. They will contribute 1,000 troops to the upcoming battle. Victory draws closer!",
     :choices => {
       "Okay" => :ally_supports
     }
