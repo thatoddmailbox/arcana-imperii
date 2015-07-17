@@ -137,7 +137,7 @@ $events = {
   20 => {
     :message => "Our Most Glorious Leader! Due to the immediate neccesity of recruiting troops, an advisor has suggested we make some...exceptions to our recitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
     :choices => {
-      "Yes" => :conscrpition_en_masse,
+      "Yes" => :conscription_en_masse,
       "No, we must draw the line"   => :nothing
     }
    },
