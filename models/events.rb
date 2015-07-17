@@ -127,11 +127,18 @@ $events = {
       "Okay" => :ally_supports
     }
    },
-  19 => {
-    :message => "Our Most Glorious Leader! ",
+  19 => {#run if ally is not in the war
+    :message => "Our Most Glorious Leader! Our ally (ally_country) is not techincally at war with (enemy_country), and as such it would be a diplomatic catsrophe if their troops participated in combat. However, they are offering to supply us with a thousand mercanaries for 80,000 (currency). Do you think we should accept that deal?",
     :choices => {
-      "Capitulate" => :annexation,
-      "Slap him"   => :declaration_of_war
+      "Yes" => :ally_mercenaries,
+      "No"   => :nothing
+    }
+   },
+  20 => {
+    :message => "Our Most Glorious Leader! Due to the immediate neccesity of recruiting troops, an advisor has suggested we make some...exceptions to our recitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
+    :choices => {
+      "Yes" => :consrpition_en_masse,
+      "No, we must draw the line"   => :nothing
     }
    }
  }
@@ -163,6 +170,10 @@ $messages = {
   :desperate_measures => "Our plan has worked as expected. Our treasury grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
   :daystobattle5 => "Preparations must begin now if we want to see victory.",
   :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!", #lose 5000 dollars and gain 1000 recruits
-  :good_recruitment => "We were sucessful at recruiting troops.", #gain 500 troops
-  :ally_supports => "Our army is bolstered with their strength!" #gain 1000 troops
+
+  :good_recruitment => "We were sucessful at recruiting troops", #gain 500 troops
+  :ally_supports => "Our army is bolstered with their strength", #gain 1000 troops
+  :ally_mercenaries =>"Our army is bolster with their helo in aquiring mercenaries and our use of state funds", #gain 1000 soldiers lose 8000 dollars
+  :consription_en_masse => "The young and the old will adjust to the military lifestyle soon enought. Although they'd better do so quick, we've got a war to win! Their families will just have to get over it" #gain 1500 soldiers lose 30% opinion
+  
 }
