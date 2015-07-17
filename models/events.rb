@@ -14,21 +14,21 @@ $events = {
     }
    },
     3 => {
-      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating of defeating (enemy_country) we must mobilize our troops if we have any chance of winning our war. We could either mobilzie our normal army or draft more citizens to increase our army size. What should we do?",
+      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating (enemy_country). We could either mobilzie our normal army or draft more citizens to increase our army size. What should we do?",
     :choices => {
       "Normal Mobilization" => :mobilize,
       "Draft more citizens"   => :harsh_draft
     }
    },
    4 => {
-     :message => "Our Most Glorius Leader, our long time ally (ally_country) has, of course, come to our aid in our fight against (enemy_country). They are offering to either send us immediate aid or declare war on (enemy_country). What sould we ask for? ",
+     :message => "Our Most Glorious Leader, our long time ally (ally_country) has, of course, come to our aid in our fight against (enemy_country). They are offering to either send us immediate aid or declare war on (enemy_country). What sould we ask for?",
     :choices => {
       "Aid" => :ally_aid,
       "Military cooperation" => :ally_declares
     }
   },
     5 => {
-      :message => "Our Most Glorious Leader, should we raise war taxes to support the war effort?",
+      :message => "Our Most Glorious Leader, should we raise our taxes to support the war effort?",
     :choices => {
       "Yes" => :taxes,
       "Yes, but only a little" => :generous_donation,
@@ -36,14 +36,14 @@ $events = {
     }
    },
   6 => {
-    :message => "Our Most Glorius Leader, using our state funds we could hire mercenaries to help us in our fight. They would cost us 75,000 (currency). Do you think we can afford the cost?",
+    :message => "Our Most Glorious Leader, using our state funds we could hire mercenaries to help us in our fight. They would cost us 75,000 (currency). Do you think we can afford the cost?",
     :choices => {
       "Yes" => :mercenaries,
       "No"   => :nothing
     }
    },
     7 => {
-      :message => "Our Most Glorious Leader! A pacifist group is protesting in the public sqaure against the war! Obviosly their message is non-sense and we must deal with them. How should we go about it?",
+      :message => "Our Most Glorious Leader! A pacifist group is protesting in the public square against the war! Obviously, their message is non-sense and we must deal with them. How should we go about it?",
     :choices => {
       "Bribes" => :small_bribe,
       "Send in the army" => :public_outrage
@@ -64,7 +64,7 @@ $events = {
     }
    },
   10 => { #when approval goes below 10%     
-    :message => "My Most Glorious Leader... The people revolt in the streets. The chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughtered en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done",
+    :message => "My Most Glorious Leader... The people revolt in the streets. They chant \"down with (name)!\" Effigies of you are burned across (country), and loyalists are slaughtered en masse. The army is no longer loyal to you and the police have no control. Looting and rioting are commonplace. We have lost control. There is nothing to be done...",
     :choices => {
       "So be it." => :revolution,
       "As what kind of artist do I die?" => :revolution,
@@ -72,20 +72,19 @@ $events = {
     }
    },
    11 => {
-     :message => "Our Most Glorious Leader. One of your advisors has proposed a propagand campaign in order to recruit more soldiers. He says it would cost 10,000 (currency) and promises results. He awaits your approval.",
-    :choices => {
-      "Let's do it" => :military_propaganda,
-      "We cannot afford it"   => :nothing
-      
-    }
+     :message => "Our Most Glorious Leader. One of your advisors has proposed a propaganda campaign in order to recruit more soldiers. He says it would cost 10,000 (currency) and promises results. He awaits your approval.",
+     :choices => {
+       "Let's do it" => :military_propaganda,
+       "We cannot afford it"   => :nothing      
+     }
    },
    12 => {
-     :message => "Our Most Glorious Leader, as the war drags on people are displaced, feilds are burned, and supply routes are cut. These factors have caused acute shortages of food and people are starving in the streets. They beg for help and resentment towards our government is rising. The cost of aliviating the situation is estimated to be 40,000 (currency), but the people would see you as a hero. What should we do?",
-    :choices => {
-      "We must act!" => :helping_hungry,
-      "We cannot help."   => :people_starving,
-      "Let them eat cake." => :public_outrage
-    }
+     :message => "Our Most Glorious Leader! As the war drags on, people are displaced, fields are burned, and supply routes are cut. These factors have caused acute shortages of food and people are starving in the streets. They beg for help and resentment towards our government is rising. The cost of alleviating the situation is estimated to be 40,000 (currency), but the people would see you as a hero. What should we do?",
+     :choices => {
+       "We must act!" => :helping_hungry,
+       "We cannot help."   => :people_starving,
+       "Let them eat cake." => :public_outrage
+     }
    },
   13 => {#flavor
     :message => "Our Most Glorious Leader. What strange and confused times we live in! A man has come in ragged clothing claiming he came from a desert! What should we do with this insane man?",
@@ -95,14 +94,14 @@ $events = {
     }
    },
   14 => {
-    :message => "Our Most Glorious Leader. A minister has proposed a radical plan. He proposes to reposses the property of political dissidents in order to fund our war. The people will be deeply displeased, but desperate times call for desperate measures. Do you agree?", 
+    :message => "Our Most Glorious Leader. A minister has proposed a radical plan. He proposes to repossess the property of political dissidents in order to fund our war. The people will be deeply displeased, but desperate times call for desperate measures. Do you agree?", 
     :choices => {
       "Yes" => :desperate_measures,
       "No"   => :nothing
     }
    },
   15 => {
-    :message => "Our Most Glorious Leader! News from the front! A medium size town is under siege! We could send in the troops to lift the siege, but there may be losses. Alternatively, we could pay money to keep the supplies flowing and we would not need as many soldiers to hold back the invaders. Perhaps it would be best to just let it fall. Keep in mind, the people like decisive victories and do not defeats. What plan should we follow?",
+    :message => "Our Most Glorious Leader! News from the front! A medium size town is under siege! We could send in the troops to lift the siege, but there may be losses. Alternatively, we could pay money to keep the supplies flowing and we would not need as many soldiers to hold back the invaders. Perhaps it would be best to just let it fall. Keep in mind, the people like decisive victories and not defeats. What plan should we follow?",
     :choices => {
       "Lift the siege!" => :great_victory,
       "We will hold them back!"   => :city_holds,
