@@ -40,9 +40,12 @@ def handle_result(result, session)
     addApprovalRating(-20, session)
   elsif result == :taxes
     session[:money] += 50000
+    session[:high_taxes] = true
     addApprovalRating(-20, session)
   elsif result == :people_approve
     addApprovalRating(20, session)
+    session[:high_taxes] = true
+    session[:no_taxes] = true
   elsif result == :mercenaries
     session[:army_size] += 1000
     return spendMoney(75000, session)
@@ -52,6 +55,9 @@ def handle_result(result, session)
     session[:money] += 10000
   elsif result == :public_outrage
     addApprovalRating(-30, session)
+    if session[:day] == 7
+      session[:day7_outrage] = true
+    end
   elsif result == :troops_used_for_people
     addApprovalRating(15, session)
     session[:army_size] -= 500

@@ -63,6 +63,8 @@ class MyApp < Sinatra::Base
     session[:allies] = []
     session[:enemies] = []
     session[:pauseDay] = false
+    session[:high_taxes] = false
+    session[:no_taxes] = false
     session[:status] = "playing"
     return redirect to("/game")
   end

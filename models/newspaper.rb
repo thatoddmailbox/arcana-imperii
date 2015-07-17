@@ -28,6 +28,18 @@ def generateHeadlines(session)
     special_headlines.push("(enemy_country) declares war on (country)!");
     special_headlines.push("(enemy_country)'s minister voted ugliest minister ever");
     special_headlines.push("New book on (enemy_country)'s shortsightedness announced!");
+  elsif day == 3
+    special_headlines.push("(country) begins preparations for war on (enemy_country)!");
+  elsif day == 4 and session[:allies].length > 0
+    special_headlines.push("(ally_country) declares war on (enemy_country)!");
+    special_headlines.push("(ally_country) announces allyship with (country)!");
+  elsif day == 5 and session[:high_taxes] and not session[:no_taxes]
+    special_headlines.push("(ally_country) reveals unpopular war tax increase plan!");
+  elsif day == 5 and session[:high_taxes] and session[:no_taxes]
+    special_headlines.push("(ruler): 'I will not raise taxes'");
+  elsif day == 7 and session[:day7_outrage]
+    special_headlines.push("Public outraged at (ruler)'s response to pacifists");
+    special_headlines.push("'We will come back even stronger next time'");
   end
   
   generic_templates = generic_templates.shuffle
