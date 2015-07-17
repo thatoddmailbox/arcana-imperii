@@ -98,6 +98,7 @@ def handle_result(result, session)
   elsif result == :desperate_measures
     session[:money] += 100000
     addApprovalRating(-40, session)
+    session[:day13_outrage] = true
   elsif result == :daystobattle5
     
   elsif result == :encouraged_recruitment
@@ -112,10 +113,25 @@ def handle_result(result, session)
   elsif result == :ally_supports
     session[:army_size] += 1000
   elsif result == :ally_mercenaries
-    # Todo: 80,000 or 8,000 monies?
+    spendResult = spendMoney(80000, session)
+    if spendResult == :ok
+      session[:army_size] += 1000
+    else
+      return spendResult
+    end
   elsif result == :conscription_en_masse
     session[:army_size] += 3500
     addApprovalRating(-30, session)
+  elsif result == :conscription_for_benefits
+    session[:army_size] += 1500
+    addApprovalRating(-30, session)  
+  elsif result == :citizen_militias
+    spendResult = spendMoney(90000, session)
+    if spendResult == :ok
+      session[:army_size] += 1000
+    else
+      return spendResult
+    end  
   end
   
   return :ok
@@ -162,6 +178,14 @@ def addEvents(day, session)
     addEventId(20, session)
   elsif day == 18
     addEventId(21, session)
+  elsif day == 19
+    addEventId(22, session)
+  elsif day == 20
+    addEventId(23, session)
+  elsif day == 21 and session[:army_size] > 7000
+    addEventId(24, session)
+  elsif day == 21
+    addEventId(25, session)
   end
   
   flavor_msgs = [13]

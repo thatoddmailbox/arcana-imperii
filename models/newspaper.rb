@@ -48,6 +48,14 @@ def generateHeadlines(session)
     if session[:day12_outrage]
       special_headlines.push("(name): 'Let them eat cake!'");      
     end
+  elsif day == 13
+    if session[:day13_outrage]
+      special_headlines.push("(name) repossesses dissendents' property!");
+      special_headlines.push("Public furious at (name)");
+      special_headlines.push("Dissendents refuse to be silenced by (name)");
+    end
+  elsif day == 14
+    special_headlines.push("Town under siege!")
   end
   
   generic_templates = generic_templates.shuffle

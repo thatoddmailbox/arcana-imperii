@@ -67,6 +67,7 @@ class MyApp < Sinatra::Base
     session[:no_taxes] = false
     session[:day7_outrage] = false
     session[:day12_outrage] = false
+    session[:day13_outrage] = false
     session[:status] = "playing"
     return redirect to("/game")
   end
@@ -133,7 +134,7 @@ class MyApp < Sinatra::Base
     
     if session[:money] >= 100
       session[:money] -= 100
-      if whichName == "country"
+      if whichName == "nation"
         session[:country] = newName
       elsif whichName == "own"
         session[:name] = newName
