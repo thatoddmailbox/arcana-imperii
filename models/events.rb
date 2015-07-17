@@ -144,7 +144,7 @@ $events = {
    21 => {
      :message => "Our Most Glorious Leader! Throught out the war we have given some aid to those displaced and dispossessed by the war. However, in an effort to encourage citizens to join the army we could tie those benefits to army service. This could be considered 'extremely amoral' by the citizenry, as everything seems to be in this day and age. Let's no let that get in the way of neccesity, right?",
     :choices => {
-      "Right" => :,
+      "Right" => :consription_for_benefits,
       "Wrong"   => :nothing
     }
    },
