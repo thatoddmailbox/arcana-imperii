@@ -1,9 +1,9 @@
 def getDate(session)
-  return "November #{4 + session[:day]}, 1975"
+  return "November #{4 + session[:day]}th, 1975"
 end
 
 def generateHeadlines(session)
-  generic_templates = ["(any_country) announces large reorganization plan!", "Pig wins (any_country) Pageant!", "Victory at the Battle of (any_country)!", "New factory opens up in (friendly).", "(enemy_country)'s minister makes fool of himself.", "(enemy_country)'s economy reaches record lows.", "Approval rating of (enemy_country)'s leader hits a record low!", "(enemy_country)'s finance minister warns of overinflation!", "(friendly) announces an army reorganization.", "(enemy_country)'s communications infrastructure knocked out by (country).", "(enemy_country) reveals discovery of (country) spies in their government!", "(country) reveals discovery of (enemy_country) spies in their government!", "Millions of (currrency) lost in (country) stock exchange failure!", "(name) gives speech on state of the war"]
+  generic_templates = ["(any_country) announces large reorganization plan!", "Pig wins (any_country) Pageant!", "Victory at the Battle of (any_country)!", "New factory opens up in (friendly).", "(enemy_country)'s minister makes a fool of himself.", "(enemy_country)'s economy reaches record lows.", "Approval rating of (enemy_country)'s leader hits a record low!", "(enemy_country)'s finance minister warns of overinflation!", "(friendly) announces an army reorganization.", "(enemy_country)'s communications infrastructure knocked out by (country).", "(enemy_country) reveals discovery of (country) spies in their government!", "(country) reveals discovery of (enemy_country) spies in their government!", "Millions of (currency) lost in (country) stock exchange failure!", "(name) gives speech on state of the war"]
   
   special_headlines = []
   
@@ -19,8 +19,13 @@ def generateHeadlines(session)
     special_headlines.push("New book on (enemy_country)'s shortsightedness announced!");
   end
   
+  # for some reason, the first two .samples always are the same.
+  generic_templates.sample
+  generic_templates.sample
+  
   while special_headlines.length < 3 do
     special_headlines.push(generic_templates.sample)
+    sleep 0.01
   end
   
   i = 0
