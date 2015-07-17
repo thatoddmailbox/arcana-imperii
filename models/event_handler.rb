@@ -103,6 +103,11 @@ def handle_result(result, session)
     session[:army_size] += 500
   elsif result == :ally_supports
     session[:army_size] += 1000
+  elsif result == :ally_mercenaries
+    # Todo: 80,000 or 8,000 monies?
+  elsif result == :conscription_en_masse
+    session[:army_size] += 3500
+    addApprovalRating(-30, session)
   end
   
   return :ok
