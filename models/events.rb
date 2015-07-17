@@ -14,7 +14,7 @@ $events = {
     }
    },
     3 => {
-      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating (enemy_country). We could either mobilize our normal army or draft more citizens to increase our army size. What should we do?",
+      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating (enemy_country). We could either mobilzie our normal army or draft more citizens to increase our army size. What should we do?",
     :choices => {
       "Normal Mobilization" => :mobilize,
       "Draft more citizens"   => :harsh_draft
@@ -109,7 +109,7 @@ $events = {
     }
    },
   16 => {
-    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 5 days from now. With this intelligence we can prepare a counterattack. We estamate the attacking force to be 7,000 strong, give or take a couple hundred. This is our chance to decisively win the war!",
+    :message => "Our Most Glorious Leader! A conversation between generals of (enemy_country) has been intercepted! They are planning an all-out attack 6 days from now. With this intelligence we can prepare a counterattack. We estamate the attacking force to be 7,000 strong, give or take a couple hundred. This is our chance to decisively win the war!",
     :choices => {
       "We will be victorious" => :daystobattle5
     }
@@ -140,7 +140,14 @@ $events = {
       "Yes" => :consrpition_en_masse,
       "No, we must draw the line"   => :nothing
     }
-   }
+   },
+   21 => {
+     :message => "Our Most Glorious Leader! Throught out the war we have given some aid to those displaced and dispossessed by the war. However, in an effort to encourage citizens to join the army we could tie those benefits to army service. This could be considered 'extremely amoral' by the citizenry, as everything seems to be in this day and age. Let's no let that get in the way of neccesity, right?",
+    :choices => {
+      "Right" => :,
+      "Wrong"   => :nothing
+    }
+   },
  }
 
 $messages = {
@@ -166,7 +173,7 @@ $messages = {
   :people_starving => "The famine hits hard and the people blame you for it.", #lose 5,000 population and 10% oppinion
   :great_victory => "Hurray! We have lifted the siege! We have lost soldiers, but the people rejoice and praise your decision.", #lose 1,000 soldiers, gain 20% opinion,
   :city_holds =>"While it is a great expense, we are maintaining control of the city despite the siege.", #lose 30,000 dollars and 500 troops
-  :city_falls => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss.", # Lose 7,500 citizens and 20% opinion
+  :city_lost => "We have lost the siege. Many citizens died when the barbaric soldiers of (enemy_country) entered the city and the people blame you for the loss.", # Lose 7,500 citizens and 20% opinion
   :desperate_measures => "Our plan has worked as expected. Our treasury grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
   :daystobattle5 => "Preparations must begin now if we want to see victory.",
   :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!", #lose 5000 dollars and gain 1000 recruits
