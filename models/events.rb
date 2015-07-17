@@ -14,7 +14,7 @@ $events = {
     }
    },
     3 => {
-      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating (enemy_country). We could either mobilzie our normal army or draft more citizens to increase our army size. What should we do?",
+      :message => "Our Most Glorious Leader, we need to mobilize our army if we have any chance of defeating (enemy_country). We could either mobilize our normal army or draft more citizens to increase our army size. What should we do?",
     :choices => {
       "Normal Mobilization" => :mobilize,
       "Draft more citizens"   => :harsh_draft
