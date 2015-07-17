@@ -135,14 +135,14 @@ $events = {
     }
    },
   20 => {
-    :message => "Our Most Glorious Leader! Due to the immediate neccesity of recruiting troops, an advisor has suggested we make some...exceptions to our recitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
+    :message => "Our Most Glorious Leader! Due to the immediate necessity of recruiting troops, an advisor has suggested we make some...exceptions to our recitment standards. Couldn't a 17 year old fight and die for (country) just as well as an 18 year old? Surely a 45 year old still has enought youth left in him for one last charge? The people won't like it, but we need more bodies to fill in our ranks. Don't you agree?",
     :choices => {
       "Yes" => :conscription_en_masse,
       "No, we must draw the line"   => :nothing
     }
    },
    21 => {
-     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficiant at basic combat. While these are supposed to be only for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
+     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficient at basic combat. While these are supposed to be only for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
     :choices => {
       "Yes" => :citizen_militias,
       "No, of course not"   => :nothing
