@@ -170,14 +170,10 @@ $messages = {
   :desperate_measures => "Our plan has worked as expected. Our treasury grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
   :daystobattle5 => "Preparations must begin now if we want to see victory.",
   :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!", #lose 5000 dollars and gain 1000 recruits
-<<<<<<< HEAD
+
   :good_recruitment => "We were sucessful at recruiting troops", #gain 500 troops
   :ally_supports => "Our army is bolstered with their strength", #gain 1000 troops
   :ally_mercenaries =>"Our army is bolster with their helo in aquiring mercenaries and our use of state funds", #gain 1000 soldiers lose 8000 dollars
   :consription_en_masse => "The young and the old will adjust to the military lifestyle soon enought. Although they'd better do so quick, we've got a war to win! Their families will just have to get over it" #gain 1500 soldiers lose 30% opinion
   
-=======
-  :good_recruitment => "We were sucessful at recruiting troops.", #gain 500 troops
-  :ally_supports => "Our army is bolstered with their strength!" #gain 1000 troops
->>>>>>> c46a7db094412861afeab10c0fbbb2eecf266ae7
 }
