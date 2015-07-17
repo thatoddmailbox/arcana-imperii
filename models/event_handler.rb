@@ -146,8 +146,12 @@ def addEvents(day, session)
     addEventId(17, session)
   elsif day == 16
     if session[:allies].length > 0
-      addEventId(18, session)
+      addEventId(18, session) # we have an ally!
+    else
+      addEventId(19, session) # we don't have an ally!
     end
+  elsif day == 17
+    addEventId(20, session)
   end
   
   flavor_msgs = [13]
