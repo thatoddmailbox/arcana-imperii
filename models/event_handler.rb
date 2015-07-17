@@ -130,7 +130,8 @@ def handle_result(result, session)
     session[:enmasse_consc] = true
   elsif result == :conscription_for_benefits
     session[:army_size] += 1500
-    addApprovalRating(-30, session)  
+    addApprovalRating(-30, session)
+    session[:benefits_consc] = true
   elsif result == :citizen_militias
     spendResult = spendMoney(90000, session)
     if spendResult == :ok

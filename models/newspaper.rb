@@ -65,6 +65,22 @@ def generateHeadlines(session)
     special_headlines.push("(country) announces changes to recruitment policy")
     special_headlines.push("Public furious in (country) recruitment policy")
     special_headlines.push("(ally_country) concerned about (country)")
+  elsif day == 19 and session[:benefits_consc]
+    special_headlines.push("'(name) is amoral'")
+    special_headlines.push("(country) ties benefits to army registration")
+    special_headlines.push("Protests in the Center Square escalate")
+  elsif day == 20
+    special_headlines.push("(country) prepares for its final battle")
+    special_headlines.push("Will (country) win?")
+    special_headlines.push("Has (name)'s strategy paid off?")
+  elsif day == 21 and session[:army_size] > 7000
+    special_headlines.push("(country) is victorious!")
+    special_headlines.push("Celebrations in the streets of (country)")
+    special_headlines.push("Statues of (name) built")
+  elsif day == 21
+    special_headlines.push("(country) has lost")
+    special_headlines.push("Riots, murders, and devastation: the aftermath")
+    special_headlines.push("(name) has failed")
   end
   
   generic_templates = generic_templates.shuffle

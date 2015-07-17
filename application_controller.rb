@@ -69,6 +69,7 @@ class MyApp < Sinatra::Base
     session[:day12_outrage] = false
     session[:day13_outrage] = false
     session[:enmasse_consc] = false
+    session[:benefits_consc] = false
     session[:status] = "playing"
     return redirect to("/game")
   end
