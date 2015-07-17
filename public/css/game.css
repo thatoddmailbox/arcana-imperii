@@ -4,3 +4,29 @@ body {
 .day {
   font-size: 1.5em;
 }
+#newspaper header {
+  font-family: Soviet, sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+#newspaper hr {
+  border: none;
+  height: 6px;
+  margin: 4px;
+  /* Set the hr color */
+  color: #333; /* old IE */
+  background-color: #333; /* Modern Browsers */
+}
+#newspaper #day {
+  font-family: Soviet, sans-serif;
+  font-size: 1.4em;
+  text-align: center;
+}
+#newspaper .headlines {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3em;
+  margin-top: 5px;
+}
+#newspaper .headlines li:first-child {
+  font-size: 1.35em;
+}

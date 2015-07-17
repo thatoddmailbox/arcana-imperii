@@ -84,7 +84,7 @@ def handle_result(result, session)
     else
       return spendResult
     end
-  elsif result == :city_falls
+  elsif result == :city_lost
     session[:population] -= 7500
     addApprovalRating(-20, session)
   elsif result == :desperate_measures
