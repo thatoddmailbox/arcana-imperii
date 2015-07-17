@@ -142,10 +142,25 @@ $events = {
     }
    },
    21 => {
+     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficiant at basic combat. While these are supposed to be olny for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
+    :choices => {
+      "Yes" => :citizen_militias,
+      "No, of course not"   => :nothing
+    }
+   },
+   22 => {
      :message => "Our Most Glorious Leader! Throught out the war we have given some aid to those displaced and dispossessed by the war. However, in an effort to encourage citizens to join the army we could tie those benefits to army service. This could be considered 'extremely amoral' by the citizenry, as everything seems to be in this day and age. Let's no let that get in the way of neccesity, right?",
     :choices => {
       "Right" => :consription_for_benefits,
       "Wrong"   => :nothing
+    }
+   },
+  23 => {
+    :message => "Our Most Glorious Leader! The day has come! The legions of (enemy_country) are making their charge! This battle will decide the fate of the war. Our armies are in position. This day will go down in history, one way or the other. I hope our actions have sucured victory.",
+    :choices => {
+      "(country) will hold" => :final_battle,
+      "We'll spill the blood of (enemy_country) men this day" => :final_battle,
+      "One day there will be peace" => :final_battle
     }
    },
  }
@@ -177,10 +192,11 @@ $messages = {
   :desperate_measures => "Our plan has worked as expected. Our treasury grows fat on the loot of our conquest. The people grow resentful.", #gain 100,000 dollars lose 40% approval
   :daystobattle5 => "Preparations must begin now if we want to see victory.",
   :encouraged_recruitment => "Success! Increased recruitment bonuses have citizens banging at the doors of recruitment centers!", #lose 5000 dollars and gain 1000 recruits
-
   :good_recruitment => "We were sucessful at recruiting troops", #gain 500 troops
   :ally_supports => "Our army is bolstered with their strength", #gain 1000 troops
   :ally_mercenaries =>"Our army is bolster with their helo in aquiring mercenaries and our use of state funds", #gain 1000 soldiers lose 8000 dollars
-  :consription_en_masse => "The young and the old will adjust to the military lifestyle soon enought. Although they'd better do so quick, we've got a war to win! Their families will just have to get over it" #gain 1500 soldiers lose 30% opinion
-  
+  :consription_en_masse => "The young and the old will adjust to the military lifestyle soon enought. Although they'd better do so quick, we've got a war to win! Their families will just have to get over it", #gain 1500 soldiers lose 30% opinion
+  :consription_for_benefits => "While these measures could be exetreme and absurd, they are obviosly neccessary given the situation", #gain 1500 soldier lose 30% opinion
+  :citizen_militias => "You know, I think to was Sun Tzu or someone like that who said that \"The best defense is a good offense\" So natrually these citizens are helping to defend their towns by joining the offensive. That's what we're telling them, at any rate.", #lose 90,000 dollars gain 1000 soldiers
+  :final_battle => "News will come from the front soon. Remember, fortune favors the bold."
 }
