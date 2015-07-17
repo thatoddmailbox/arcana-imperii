@@ -163,6 +163,13 @@ $events = {
       "One day there will be peace" => :final_battle
     }
    },
+  24 => {#If you have more than 7000 soldiers after event 23
+     :message => "Our Most Glorious Leader! News from the front! Victory! Victory! The people rejoice in the streets!",
+    :choices => {
+      "Capitulate" => :annexation,
+      "Slap him"   => :declaration_of_war
+    }
+   },
  }
 
 $messages = {
