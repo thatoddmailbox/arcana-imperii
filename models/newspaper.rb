@@ -36,16 +36,28 @@ def generateHeadlines(session)
   elsif day == 5 and session[:high_taxes] and not session[:no_taxes]
     special_headlines.push("(ally_country) reveals unpopular war tax increase plan!");
   elsif day == 5 and session[:high_taxes] and session[:no_taxes]
-    special_headlines.push("(ruler): 'I will not raise taxes'");
+    special_headlines.push("(name): 'I will not raise taxes'");
   elsif day == 7 and session[:day7_outrage]
-    special_headlines.push("Public outraged at (ruler)'s response to pacifists");
-    special_headlines.push("'We will come back even stronger next time'");
+    special_headlines.push("Public outraged at (name)'s response to pacifists");
+    special_headlines.push("'We will come back even stronger next time' - Pacifists");
+    special_headlines.push("Many calling for (name)'s power to be reduced");
+  elsif day == 8
+    special_headlines.push("(enemy_country) begins to cross the border of (country)!");  
+  elsif day == 12
+    special_headlines.push("Hunger is everywhere!");
+    if session[:day12_outrage]
+      special_headlines.push("(name): 'Let them eat cake!'");      
+    end
   end
   
   generic_templates = generic_templates.shuffle
   special_headlines = special_headlines.shuffle
   
   final_headlines = []
+  
+  if session[:approval_rating] < 10
+    final_headlines = ["(name) is a terrible person", "(country) falls apart", "'Down with (name)!' 'Down with (name)!'"]
+  end
   
   i = 0
   while final_headlines.length < 3 and special_headlines.length > i do

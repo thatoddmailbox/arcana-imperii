@@ -57,6 +57,8 @@ def handle_result(result, session)
     addApprovalRating(-30, session)
     if session[:day] == 7
       session[:day7_outrage] = true
+    elsif session[:day] == 12
+      session[:day12_outrage] = true
     end
   elsif result == :troops_used_for_people
     addApprovalRating(15, session)
