@@ -30,3 +30,9 @@ body {
 #newspaper .headlines li:first-child {
   font-size: 1.35em;
 }
+.rowheader {
+  font-size: 1.4em;
+}
+#allies, #enemies {
+  font-size: 1.2em;
+}

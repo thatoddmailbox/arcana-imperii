@@ -165,7 +165,7 @@
     <hr />
     <div class="row">
       <div class="col-md-6">
-        Allies:
+        <div class="rowheader">Allies:</div>
         <ul id="allies">
           <% session[:allies].each do |ally| %>
           <li><%= h ally %></li>
@@ -173,7 +173,7 @@
         </ul>
       </div>
       <div class="col-md-6">
-        Enemies:
+        <div class="rowheader">Enemies:</div>
         <ul id="enemies">
           <% session[:enemies].each do |enemy| %>
           <li><%= h enemy %></li>
