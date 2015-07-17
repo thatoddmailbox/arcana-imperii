@@ -71,7 +71,7 @@ def handle_result(result, session)
   elsif result == :revolution
     session[:status] = "lost"
   elsif result == :military_propaganda
-    spendResult = spendMoney(1000, session)
+    spendResult = spendMoney(10000, session)
     if spendResult == :ok
       session[:army_size] += 500
     else

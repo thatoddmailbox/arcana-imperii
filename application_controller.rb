@@ -127,7 +127,7 @@ class MyApp < Sinatra::Base
     message = $messages[result]
     
     if didItWork == :over_spend
-      message = $message[:over_spend]
+      message = $messages[:over_spend]
     end
     
     parseMsg(message, session)
