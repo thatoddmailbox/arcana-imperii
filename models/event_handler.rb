@@ -127,6 +127,7 @@ def handle_result(result, session)
   elsif result == :conscription_en_masse
     session[:army_size] += 3500
     addApprovalRating(-30, session)
+    session[:enmasse_consc] = true
   elsif result == :conscription_for_benefits
     session[:army_size] += 1500
     addApprovalRating(-30, session)  

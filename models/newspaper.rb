@@ -56,6 +56,15 @@ def generateHeadlines(session)
     end
   elsif day == 14
     special_headlines.push("Town under siege!")
+  elsif day == 15
+    special_headlines.push("A call for soldiers of (country)")
+  elsif day == 16 and session[:allies].length > 0
+    special_headlines.push("(ally_country) donates troops to (country)")
+    special_headlines.push("(ally_country) questions allyship with (country)")
+  elsif day == 17 and session[:enmasse_consc]
+    special_headlines.push("(country) announces changes to recruitment policy")
+    special_headlines.push("Public furious in (country) recruitment policy")
+    special_headlines.push("(ally_country) concerned about (country)")
   end
   
   generic_templates = generic_templates.shuffle

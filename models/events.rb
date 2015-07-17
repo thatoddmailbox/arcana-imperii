@@ -142,7 +142,7 @@ $events = {
     }
    },
    21 => {
-     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficiant at basic combat. While these are supposed to be olny for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
+     :message => "Our Most Glorious Leader! It seems that in order to defend their homes, many citiznes near the fighting have formed local militias which have become quite proficiant at basic combat. While these are supposed to be only for the purpose of defense, I'm sure that with some...monetary compensation they could be convinced to join in the fighting. Let's say... 90,000 (currency). Do you think we need their help?",
     :choices => {
       "Yes" => :citizen_militias,
       "No, of course not"   => :nothing
