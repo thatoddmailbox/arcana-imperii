@@ -21,7 +21,7 @@ $events = {
     }
    },
    4 => {
-     :message => "Our Most Glorious Leader, our long time ally (ally_country) has, of course, come to our aid in our fight against (enemy_country). They are offering to either send us immediate aid or declare war on (enemy_country). What sould we ask for?",
+     :message => "Our Most Glorious Leader, our long time ally (ally_country) has, of course, come to our aid in our fight against (enemy_country). They are offering to either send us immediate aid or declare war on (enemy_country). What should we ask for?",
     :choices => {
       "Aid" => :ally_aid,
       "Military cooperation" => :ally_declares
