@@ -77,6 +77,9 @@
             $("#nameSetModal .modal-footer").append($okBtn);
           });
         });
+        $("#openNewspaper").click(function() {
+          $("#newspaper").modal();
+        });
       });
     </script>
     
@@ -200,16 +203,16 @@
         Settings:
       </div>
       <div class="col-md-2">
-        <button id="countryname" class="btn btn-primary">Country name</button>
+        <button id="countryname" class="btn btn-default">Country name</button>
       </div>
       <div class="col-md-2">
-        <button id="yourname" class="btn btn-primary">Your name</button>
+        <button id="yourname" class="btn btn-default">Your name</button>
       </div>
       <div class="col-md-2">
-        <button id="currencyname" class="btn btn-primary">Currency name</button>
+        <button id="currencyname" class="btn btn-default">Currency name</button>
       </div>
-      <div class="col-md-2 day">
-        Today is Day <%= session[:day] %>
+      <div class="col-md-2">
+        <button id="openNewspaper" class="btn btn-primary">Open newspaper</button>
       </div>
     </div>
     <hr />

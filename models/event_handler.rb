@@ -152,6 +152,8 @@ def addEvents(day, session)
     end
   elsif day == 17
     addEventId(20, session)
+  elsif day == 18
+    addEventId(21, session)
   end
   
   flavor_msgs = [13]

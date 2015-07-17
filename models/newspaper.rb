@@ -1,5 +1,16 @@
+require 'date'
+
 def getDate(session)
-  return "November #{4 + session[:day]}th, 1975"
+  date = Date.new(1975, 11, 4 + session[:day])
+  th = "th"
+  if date.day > 19 and date.day.to_s[-1] == "1"
+    th = "st"
+  elsif date.day > 19 and date.day.to_s[-1] == "2"
+    th = "nd"
+  elsif date.day > 19 and date.day.to_s[-1] == "3"
+    th = "rd"
+  end
+  return date.strftime("%A, %B %-d#{th}, %Y")
 end
 
 def generateHeadlines(session)
