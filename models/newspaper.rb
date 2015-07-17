@@ -19,22 +19,30 @@ def generateHeadlines(session)
     special_headlines.push("New book on (enemy_country)'s shortsightedness announced!");
   end
   
-  # for some reason, the first two .samples always are the same.
-  generic_templates.sample
-  generic_templates.sample
+  generic_templates = generic_templates.shuffle
+  special_headlines = special_headlines.shuffle
   
-  while special_headlines.length < 3 do
-    special_headlines.push(generic_templates.sample)
-    sleep 0.01
-  end
+  final_headlines = []
   
   i = 0
-  special_headlines.each do |headline|
-    parsedStr = parseMsg(headline, session)
-    parsedStr = parsedStr[0].upcase + parsedStr[1..parsedStr.length-1]
-    special_headlines[i] = parsedStr
+  while final_headlines.length < 3 and special_headlines.length > i do
+    final_headlines.push(special_headlines[i])
     i += 1
   end
   
-  return special_headlines
+  i = 0
+  while final_headlines.length < 3 do
+    final_headlines.push(generic_templates[i])
+    i += 1
+  end
+  
+  i = 0
+  final_headlines.each do |headline|
+    parsedStr = parseMsg(headline, session)
+    parsedStr = parsedStr[0].upcase + parsedStr[1..parsedStr.length-1]
+    final_headlines[i] = parsedStr
+    i += 1
+  end
+  
+  return final_headlines
 end
